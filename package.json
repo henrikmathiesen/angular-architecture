@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/henrikmathiesen/angularArchitecture/issues"
   },
-  "homepage": "https://github.com/henrikmathiesen/angularArchitecture#readme"
+  "homepage": "https://github.com/henrikmathiesen/angularArchitecture#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
 }
