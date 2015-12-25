@@ -1,0 +1,19 @@
+{
+  "name": "angulararchitecture",
+  "version": "1.0.0",
+  "description": "Modules, controller as, ui-router, resolve, bootstrap less, gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henrikmathiesen/angularArchitecture.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henrikmathiesen/angularArchitecture/issues"
+  },
+  "homepage": "https://github.com/henrikmathiesen/angularArchitecture#readme"
+}
