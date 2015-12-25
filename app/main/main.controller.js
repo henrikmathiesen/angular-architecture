@@ -1,7 +1,8 @@
 angular
     .module('main')
-    .controller('mainController', function(){
+    .controller('main', function($scope){
     
-    
+    $scope.test = "Henrik!"
+    console.log($scope.test);
     
 });
