@@ -4,18 +4,13 @@ angular
         return {
             scope: {},
             templateUrl: '/app/main/navigation/main-navigation.template.html',
-            controller: function ($rootScope, statesConstant) {
+            replace: true,
+            controller: function ($state) {
                 var ctrl = this;
                 
-                ctrl.states = statesConstant;
-                
-//                 ctrl.state = '';
-// 
-//                 $rootScope.$on('$stateChangeSuccess',
-//                     function (event, toState, toParams, fromState, fromParams) {
-//                         ctrl.state = toState.name;
-//                     });
-
+                // Remove the first abstract state from the array
+                ctrl.states = $state.get();
+                ctrl.states.shift();
             },
             controllerAs: 'ctrl',
             bindToController: true

@@ -4,6 +4,4 @@ angular
        
        var startCtrl = this;
        
-       startCtrl.title = "Start";
-        
     });

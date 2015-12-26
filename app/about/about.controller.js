@@ -4,6 +4,4 @@ angular
     
     var aboutCtrl = this;
     
-    aboutCtrl.title = "About";
-    
 });

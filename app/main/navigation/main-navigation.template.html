@@ -1,6 +1,5 @@
-<div class="aa-main-navigation">
-    <ul>
-        <li><a ui-sref="{{ctrl.states.start}}" ui-sref-active="active">Start</a></li>
-        <li><a ui-sref="{{ctrl.states.about}}" ui-sref-active="active">About</a></li>
-    </ul>
-</div>
+<ul class="aa-main-navigation">
+    <li ng-repeat="state in ctrl.states">
+        <a ui-sref="{{::state.name}}" ui-sref-active="active">{{::state.data.title}}</a>
+    </li>
+</ul>

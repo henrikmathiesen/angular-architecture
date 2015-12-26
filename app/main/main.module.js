@@ -1,12 +1,12 @@
 angular
-    .module('main', ['ui.router', 'main.shared', 'main.start', 'main.about'])
-    .config(function($urlRouterProvider, $stateProvider, statesConstant){
+    .module('main', ['ui.router', 'main.start', 'main.about'])
+    .config(function($urlRouterProvider, $stateProvider){
        console.log("Main Config");
        
        $urlRouterProvider.otherwise('/');
        
        $stateProvider
-        .state(statesConstant.start, {
+        .state('start', {
             url: '/',
             templateUrl: '/app/start/start.template.html',
             controller: 'start as startCtrl',
@@ -14,7 +14,7 @@ angular
                 title: 'Start'
             }
         })
-        .state(statesConstant.about, {
+        .state('about', {
             url: '/about',
             templateUrl: '/app/about/about.template.html',
             controller: 'about as aboutCtrl',
