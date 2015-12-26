@@ -26,7 +26,7 @@ var jsLibSrc = [
     'bower_components/jquery/dist/jquery.js',
     'bower_components/fastclick/lib/fastclick.js',
     'bower_components/angular/angular.js',
-    'bower_components/angular-ui-router/angular-ui-router.js'
+    'bower_components/angular-ui-router/release/angular-ui-router.js'
 ];
 
 var jsAppSrc = [
@@ -78,8 +78,8 @@ gulp.task('js-app', function(){
         .pipe(gulpif(!isProduction, sourceMaps.init()))
         
         .pipe(concatJs('app.js'))
+        .pipe(ngAnnotate())
         
-        .pipe(gulpif(isProduction, ngAnnotate()))
         .pipe(gulpif(isProduction, stripDebug()))
         .pipe(gulpif(isProduction, uglifyJs()))
         .pipe(gulpif(isProduction, rev()))

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="main">
+<html lang="en" ng-app="main" ng-strict-di="true">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -12,7 +12,7 @@
   </head>
   <body ng-controller="main as mainCtrl" ng-cloak="">
     <h1>{{mainCtrl.title}}</h1>
-    <ng-view></ng-view>
+    <ui-view></ui-view>
     
     <!-- inject:js -->
     <script src="/bld/lib.js"></script>
