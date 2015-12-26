@@ -11,7 +11,10 @@
     <!-- endinject -->
   </head>
   <body ng-controller="main as mainCtrl" ng-cloak="">
-    <h1>{{mainCtrl.title}}</h1>
+    <h1>{{::mainCtrl.title}}</h1>
+    <hr>
+    <aa-main-navigation></aa-main-navigation>
+    <hr>
     <ui-view></ui-view>
     
     <!-- inject:js -->
