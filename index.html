@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="main">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,10 +10,9 @@
     <link rel="stylesheet" href="/bld/main.css">
     <!-- endinject -->
   </head>
-  <body ng-app="main" ng-controller="main">
-    <h1>It works!</h1>
-    
-    {{ test }}
+  <body ng-controller="main as mainCtrl" ng-cloak="">
+    <h1>{{mainCtrl.title}}</h1>
+    <ng-view></ng-view>
     
     <!-- inject:js -->
     <script src="/bld/lib.js"></script>

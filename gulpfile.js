@@ -23,20 +23,20 @@ var resetinject = (argv.resetinject) ? (true) : (false);
 // Sources
 
 var jsLibSrc = [
-    './bower_components/jquery/dist/jquery.js',
-    './bower_components/fastclick/lib/fastclick.js',
-    './bower_components/angular/angular.js',
-    './bower_components/angular-ui-router/angular-ui-router.js'
+    'bower_components/jquery/dist/jquery.js',
+    'bower_components/fastclick/lib/fastclick.js',
+    'bower_components/angular/angular.js',
+    'bower_components/angular-ui-router/angular-ui-router.js'
 ];
 
 var jsAppSrc = [
-    './app/**/*.module.js',
-    './app/**/*.js'
+    'app/**/*.module.js',
+    'app/**/*.js'
 ];
 
-var lessSrc = './app/main/main.less';
+var lessSrc = 'app/main/main.less';
 
-var bldFolder = './bld';
+var bldFolder = 'bld';
 
 //
 // Sub tasks
