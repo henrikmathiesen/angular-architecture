@@ -8,12 +8,13 @@ angular
                 var ctrl = this;
                 
                 ctrl.states = statesConstant;
-                ctrl.state = '';
-
-                $rootScope.$on('$stateChangeSuccess',
-                    function (event, toState, toParams, fromState, fromParams) {
-                        ctrl.state = toState.name;
-                    });
+                
+//                 ctrl.state = '';
+// 
+//                 $rootScope.$on('$stateChangeSuccess',
+//                     function (event, toState, toParams, fromState, fromParams) {
+//                         ctrl.state = toState.name;
+//                     });
 
             },
             controllerAs: 'ctrl',

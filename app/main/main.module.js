@@ -9,14 +9,18 @@ angular
         .state(statesConstant.start, {
             url: '/',
             templateUrl: '/app/start/start.template.html',
-            controller: 'start',
-            controllerAs: 'startCtrl'
+            controller: 'start as startCtrl',
+            data: {
+                title: 'Start'
+            }
         })
         .state(statesConstant.about, {
             url: '/about',
             templateUrl: '/app/about/about.template.html',
-            controller: 'about',
-            controllerAs: 'aboutCtrl'
+            controller: 'about as aboutCtrl',
+            data: {
+                title: 'About'
+            }
         })
 
     })
