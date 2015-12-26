@@ -1,5 +1,5 @@
 angular
-    .module('start')
+    .module('main.start')
     .controller('start', function(){
        
        var startCtrl = this;

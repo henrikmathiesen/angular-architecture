@@ -1,7 +1,8 @@
 angular
-    .module('main', ['ui.router', 'start', 'about'])
-    .config(function($urlRouterProvider, $stateProvider){
+    .module('main', ['ui.router', 'main.start', 'main.about'])
+    .config(function($urlRouterProvider, $stateProvider, test){
        console.log("Main Config");
+       console.log(test);
        
        $urlRouterProvider.otherwise('/');
        
@@ -20,9 +21,11 @@ angular
         })
 
     })
-    .run(function($state){
+    .run(function($state, test){
         console.log("Main Run");
-    });
+        console.log(test);
+    })
+    .constant('test', 'henrik');
     
     
 
@@ -38,6 +41,8 @@ angular
     
     # Can NOT inject service into config
     # CAN inject service into run
+    
+    # CAN inject constants into both config and run
     
     # ui.router is more powerful than ng-route; "use it instead"
     

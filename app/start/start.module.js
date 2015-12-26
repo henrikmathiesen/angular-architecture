@@ -1,5 +1,5 @@
 angular
-    .module('start', [])
+    .module('main.start', [])
     .config(function(){
         console.log("Start Config");
     })
