@@ -1,19 +1,18 @@
 angular
-    .module('main', ['ui.router', 'main.start', 'main.about'])
-    .config(function($urlRouterProvider, $stateProvider, test){
+    .module('main', ['ui.router', 'main.shared', 'main.start', 'main.about'])
+    .config(function($urlRouterProvider, $stateProvider, statesConstant){
        console.log("Main Config");
-       console.log(test);
        
        $urlRouterProvider.otherwise('/');
        
        $stateProvider
-        .state('start', {
+        .state(statesConstant.start, {
             url: '/',
             templateUrl: '/app/start/start.template.html',
             controller: 'start',
             controllerAs: 'startCtrl'
         })
-        .state('about', {
+        .state(statesConstant.about, {
             url: '/about',
             templateUrl: '/app/about/about.template.html',
             controller: 'about',
@@ -21,11 +20,10 @@ angular
         })
 
     })
-    .run(function($state, test){
+    .run(function($state){
         console.log("Main Run");
-        console.log(test);
-    })
-    .constant('test', 'henrik');
+        console.log($state.get());
+    });
     
     
 

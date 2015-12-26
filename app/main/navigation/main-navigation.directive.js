@@ -3,9 +3,12 @@ angular
     .directive('aaMainNavigation', function () {
         return {
             scope: {},
-            templateUrl: '/app/main/main-navigation.template.html',
-            controller: function ($rootScope) {
+            templateUrl: '/app/main/navigation/main-navigation.template.html',
+            controller: function ($rootScope, statesConstant) {
                 var ctrl = this;
+                
+                ctrl.states = statesConstant;
+                ctrl.state = '';
 
                 $rootScope.$on('$stateChangeSuccess',
                     function (event, toState, toParams, fromState, fromParams) {
@@ -13,7 +16,8 @@ angular
                     });
 
             },
-            controllerAs: 'ctrl'
+            controllerAs: 'ctrl',
+            bindToController: true
         }
     });
     
