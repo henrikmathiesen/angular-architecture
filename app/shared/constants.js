@@ -1,6 +1,8 @@
 angular
     .module('main.shared')
+    
     .constant('apiUrlConstant', 'http://localhost:1338/')
+    
     .constant('weekDaysConstant', {
         sunday: 'Sunday',
         monday: 'Monday',
