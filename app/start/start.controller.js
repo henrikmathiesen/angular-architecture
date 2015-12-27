@@ -4,4 +4,8 @@ angular
        
        var startCtrl = this;
        
+       startCtrl.fadeOutCallback = function(){
+           console.log("fadeOutCallback ran in start controller");
+       };
+       
     });
