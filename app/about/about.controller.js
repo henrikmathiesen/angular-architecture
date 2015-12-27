@@ -4,4 +4,8 @@ angular
     
     var aboutCtrl = this;
     
+    console.log("About controller");
+    
+    
+    
 });

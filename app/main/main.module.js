@@ -48,4 +48,6 @@ angular
     
     # ui.router is more powerful than ng-route; "use it instead"
     
+    https://scotch.io/tutorials/3-simple-tips-for-using-ui-router
+    
  */
