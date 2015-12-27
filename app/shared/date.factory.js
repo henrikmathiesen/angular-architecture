@@ -1,27 +1,59 @@
 angular
     .module('main.shared')
-    .factory('dateFactory', function () {
+    .factory('dateFactory', function (weekDaysConstant) {
 
-        var _date = new Date();
+        var _constructDateAndTime = function () {
+            var date = new Date();
 
-        var _year = _date.getFullYear();
-        var _month = _date.getMonth() + 1;
-        var _day = _date.getDate();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
 
-        var _hours = _date.getHours();
-        var _minutes = _date.getMinutes();
-        var _seconds = _date.getSeconds();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var seconds = date.getSeconds();
+            
+            var weekDays = [
+                weekDaysConstant.sunday, 
+                weekDaysConstant.monday, 
+                weekDaysConstant.tuesday, 
+                weekDaysConstant.wednesday, 
+                weekDaysConstant.thursday, 
+                weekDaysConstant.friday, 
+                weekDaysConstant.saturday
+            ];  
 
-        var _currentDate = {
-            timeWithSeconds: ((_hours < 10) ? ("0") : ("")) + _hours + ":" + ((_minutes < 10) ? ("0") : ("")) + _minutes + ":" + ((_seconds < 10) ? ("0") : ("")) + _seconds,
-            timeWithoutSeconds: ((_hours < 10) ? ("0") : ("")) + _hours + ":" + ((_minutes < 10) ? ("0") : ("")) + _minutes,
-            date: _year + "-" + ((_month < 10) ? ("0") : ("")) + _month + "-" + ((_day < 10) ? ("0") : ("")) + _day
+            var currentDate = {
+                timeWithSeconds: ((hours < 10) ? ("0") : ("")) + hours + ":" + ((minutes < 10) ? ("0") : ("")) + minutes + ":" + ((seconds < 10) ? ("0") : ("")) + seconds,
+                timeWithoutSeconds: ((hours < 10) ? ("0") : ("")) + hours + ":" + ((minutes < 10) ? ("0") : ("")) + minutes,
+                date: year + "-" + ((month < 10) ? ("0") : ("")) + month + "-" + ((day < 10) ? ("0") : ("")) + day,
+                weekDay: weekDays[date.getDay()]
+            };
+            
+            return currentDate;
+        };
+        
+        var getTime = function(){
+            return _constructDateAndTime().timeWithSeconds;
+        };
+        
+        var getTimeNoSec = function(){
+            return _constructDateAndTime().timeWithoutSeconds;
+        };
+
+        var getDate = function(){
+            return _constructDateAndTime().date;
+        };
+        
+        var getWeekDay = function(){
+            return _constructDateAndTime().weekDay;
         };
         
         return {
-            currentTime: _currentDate.timeWithSeconds,
-            currentTimeNoSec: _currentDate.timeWithoutSeconds,
-            currentDate: _currentDate.date
+            getTime: getTime,
+            getTimeNosec: getTimeNoSec,
+            getDate: getDate,
+            getWeekDay: getWeekDay
         }
 
     });
