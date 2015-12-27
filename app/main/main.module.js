@@ -1,5 +1,5 @@
 angular
-    .module('main', ['ui.router', 'main.start', 'main.about'])
+    .module('main', ['ui.router', 'main.shared', 'main.start', 'main.about'])
     .config(function($urlRouterProvider, $stateProvider){
        console.log("Main Config");
        
@@ -40,6 +40,8 @@ angular
     - start modules run
     - about modules run
     - main modules run
+    
+    # Order of module dependencies does not seem to matter
     
     # Can NOT inject service into config
     # CAN inject service into run
