@@ -1,42 +1,50 @@
-<div>
-    <p>
-        This Angular Application is primary about architecture. It is based on two Pluralsight Courses and their correspondant Git Hub Repos.
-    </p>
-    <h3>Goals</h3>
-    <ul>
-        <li>Get better at Angular</li>
-        <li>Keep Angular projects orginized and modular</li>
-        <li>Use 'controller as' syntax</li>
-        <li>Use ui-router</li>
-        <li>Get resolve to work</li>
-        <li>Use gulp for the usal suspects like compiling LESS/SASS, bundeling and minification</li>
-        <li>But also use gulp for autoprefix css, ng-annotate and strip console.log</li>
-        <li>Get the same LESS architecture with Bootstrap as with SASS and Foundation</li>
-        <li>Repeat Bootstrap a little bit</li>
-    </ul>
-    
-    <h3>Resources</h3>
-    <ul>
-        <li>
-            <a href="https://app.pluralsight.com/library/courses/angularjs-patterns-clean-code/table-of-contents" target="_blank">Angular Patterns Clean Code</a>
-        </li>
-        <li>
-            <a href="https://app.pluralsight.com/library/courses/angular-application-development/table-of-contents" target="_blank">Angular Application Development</a>
-        </li>
-        <li>
-            <a href="https://github.com/johnpapa" target="_blank">John Papas repo with sample projects and a styleguide for Angular</a>
-        </li>
-        <li>
-            <a href="https://github.com/simpulton">Lukas Ruebbelkes repo with sample projects</a>
-        </li>
-    </ul>
-    
-    <h3>Up a head</h3>
-    <p>
-        Might go further with this project and incorparate Angular unit testing.
-    </p>
-    
-    <hr>
-    <h4>Current day is {{::aboutCtrl.currentDay}} and that means: {{::aboutCtrl.currentDayMessage}}</h4>
-    
+<div class="aa-about-template">
+    <div class="row">
+        <div class="col-md-8 col-lg-6">
+            <p>
+                This Angular Application is primary about architecture. It is based on two Pluralsight Courses and their correspondant Git
+                Hub Repos.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3>Goals</h3>
+            <ul>
+                <li>Get better at Angular</li>
+                <li>Keep Angular projects orginized and modular</li>
+                <li>Use 'controller as' syntax</li>
+                <li>Use ui-router</li>
+                <li>Get resolve to work</li>
+                <li>Use gulp for the usal suspects like compiling LESS/SASS, bundeling and minification</li>
+                <li>But also use gulp for autoprefix css, ng-annotate and strip console.log</li>
+                <li>Get the same LESS architecture with Bootstrap as with SASS and Foundation</li>
+                <li>Repeat Bootstrap a little bit</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>Resources</h3>
+            <ul>
+                <li>
+                    <a href="https://app.pluralsight.com/library/courses/angularjs-patterns-clean-code/table-of-contents" target="_blank">Angular Patterns Clean Code</a>
+                </li>
+                <li>
+                    <a href="https://app.pluralsight.com/library/courses/angular-application-development/table-of-contents" target="_blank">Angular Application Development</a>
+                </li>
+                <li>
+                    <a href="https://github.com/johnpapa" target="_blank">John Papas repo with sample projects and a styleguide for Angular</a>
+                </li>
+                <li>
+                    <a href="https://github.com/simpulton">Lukas Ruebbelkes repo with sample projects</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>Up a head</h3>
+            <p>
+                Might go further with this project and incorparate Angular unit testing.
+            </p>
+
+            <hr>
+            <h4>Current day is {{::aboutCtrl.currentDay}} and that means: {{::aboutCtrl.currentDayMessage}}</h4>
+        </div>
+    </div>
 </div>

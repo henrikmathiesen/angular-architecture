@@ -35,6 +35,7 @@ var jsAppSrc = [
 ];
 
 var lessSrc = 'app/main/main.less';
+var lessSrcWatch = 'app/**/*.less';
 
 var bldFolder = 'bld';
 
@@ -116,5 +117,5 @@ gulp.task('default', ['clean-bld', 'js-lib', 'js-app', 'less'], function(){
 
 gulp.task('watch', ['default'], function(){
     gulp.watch(jsAppSrc, ['js-app']);
-    gulp.watch(lessSrc, ['less']);
+    gulp.watch(lessSrcWatch, ['less']);
 });

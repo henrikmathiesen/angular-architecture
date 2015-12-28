@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" ng-app="main" ng-strict-di="true">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,18 +10,32 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="/bld/main.css">
     <!-- endinject -->
-  </head>
-  <body ng-controller="main as mainCtrl" ng-cloak="">
-    <h1>{{::mainCtrl.title}}</h1>
-    <hr>
-    <aa-main-navigation></aa-main-navigation>
-    <hr>
-    <aa-sub-title></aa-sub-title>
+</head>
+
+<body ng-controller="main as mainCtrl" ng-cloak="" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{::mainCtrl.title}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <hr>
+            <aa-main-navigation></aa-main-navigation>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <aa-sub-title></aa-sub-title>
+        </div>
+    </div>
     <ui-view></ui-view>
-    
+
     <!-- inject:js -->
     <script src="/bld/lib.js"></script>
     <script src="/bld/app.js"></script>
     <!-- endinject -->
-  </body>
+</body>
+
 </html>
