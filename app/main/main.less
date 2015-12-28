@@ -2,8 +2,10 @@
  
 // Core variables and mixins
 @import '../../bower_components/bootstrap/less/variables.less';
+
 // Override Bootstraps variables
 @import 'aa-settings.less';
+
 @import '../../bower_components/bootstrap/less/mixins.less';
 
 // Reset and dependencies
@@ -54,7 +56,8 @@
 @import '../../bower_components/bootstrap/less/responsive-utilities.less';
 
 // App
-@import 'navigation/aa-main-navigation.less';
-@import '../about/about.less';
+@import '../shared/aa-mixins.less';
 @import '../shared/aa-typography.less';
+@import 'navigation/aa-main-navigation.less';
+@import '../about/aa-about.less';
 @import '../shared/aa-helpers.less';
