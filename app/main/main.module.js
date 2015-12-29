@@ -33,7 +33,7 @@ angular
         .state('events', {
             url: '/events',
             templateUrl: '/app/events/events.template.html',
-            controller: 'events as eventCtrl',
+            controller: 'events as eventsCtrl',
             data: {
                 title: 'The Events Yeah!'
             }
