@@ -1,5 +1,5 @@
 angular
-    .module('main', ['ui.router', 'main.shared', 'main.start', 'main.about'])
+    .module('main', ['ui.router', 'main.shared', 'main.start', 'main.about', 'main.responsivejs'])
     .config(function($urlRouterProvider, $stateProvider){
        console.log("Main Config");
        
@@ -22,7 +22,15 @@ angular
                 title: 'About'
             }
         })
-
+        .state('responsivejs', {
+            url: '/responsivejs',
+            templateUrl: '/app/responsivejs/responsivejs.template.html',
+            controller: 'responsivejs as responsivejsCtrl',
+            data: {
+                title: 'Responsive JS'
+            }    
+        })
+        ;
     })
     .run(function($state){
         console.log("Main Run");
