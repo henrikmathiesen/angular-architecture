@@ -1,11 +1,15 @@
 @state-success-text:#00FF00;
 
 
-
+// Override Bootstrap mq break points
 @screen-sm:768px;
 @screen-md:1024px;
 @screen-lg:1441px;
 
+// Override Bootstrap container sizes
+// @container-tablet: (720px + @grid-gutter-width);             // sm
+// @container-desktop: (940px + @grid-gutter-width);            // md
+// @container-large-desktop: (1140px + @grid-gutter-width);     // lg (site max-width)
 
 // HELPER DOCUMENTATION
 
@@ -39,5 +43,22 @@
 // @media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }
 // @media (min-width: @screen-lg-min) { ... }
 
-//
-// Adaptive Grid
+
+/* 
+    Fluid VS Adaptive Grid
+    
+    Grid should have this mark up
+    div.container-fluid || div.container
+        div.row
+        >div.col-xx-nn
+    
+    .col-xx-nn width is always in percent
+    .container-fluid makes the grid fluid, like Foundations grid, where column width changes fluid within a range
+    .container makes the grid adaptive, where the .container width is changed through media queries and column adapt and "jump to size/place"
+
+*/
+
+// Bootstrap original .container size
+// @container-tablet: (720px + @grid-gutter-width);             // sm
+// @container-desktop: (940px + @grid-gutter-width);            // md
+// @container-large-desktop: (1140px + @grid-gutter-width);     // lg (site max-width)
