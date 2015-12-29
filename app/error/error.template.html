@@ -1,0 +1,13 @@
+<div class="aa-error-template">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                There was an error going to view, <span class="text-danger">{{errorCtrl.stateWithError}}</span>
+            </p>
+            <h3>Why?</h3>
+            <p>
+                {{ (errorCtrl.errorMessage) ? (errorCtrl.errorMessage) : ('We do not know') }}
+            </p>
+        </div>
+    </div>
+</div>

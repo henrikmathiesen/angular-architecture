@@ -1,5 +1,5 @@
 angular
-    .module('main', ['ui.router', 'main.shared', 'main.start', 'main.about', 'main.responsivejs', 'main.events'])
+    .module('main', ['ui.router', 'main.shared', 'main.start', 'main.about', 'main.responsivejs', 'main.events', 'main.error'])
     .config(function ($urlRouterProvider, $stateProvider) {
         console.log("Main Config");
 
@@ -42,6 +42,17 @@ angular
                         return eventsFactory.getEvents();
                     }
                 }
+            })
+            .state('error', {
+                templateUrl: '/app/error/error.template.html',
+                controller: 'error as errorCtrl',
+                data: {
+                    title: 'An error is upon us!!'
+                },
+                params: {
+                    // Since this state does not have an url, we cant send parameter that way. This way works instead
+                    errorInfo: null
+                }
             });
     })
     .run(function ($state, stateChangeFactory) {
@@ -77,5 +88,8 @@ angular
     
     # If using resolve in state object, the controller WILL NOT be instantiated if a promise is rejected
         - Also the view will not load until resolved
+        
+    
+    Cool loader animation, easy to use (he says): https://github.com/chieffancypants/angular-loading-bar
     
  */

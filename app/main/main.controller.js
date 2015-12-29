@@ -4,7 +4,7 @@ angular
     
     var mainCtrl = this;
     
-    mainCtrl.title = "Angular Achitecture";
+    mainCtrl.title = "Angular Architecture";
     
 });
 

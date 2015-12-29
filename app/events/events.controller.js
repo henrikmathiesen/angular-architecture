@@ -1,6 +1,6 @@
 angular
     .module('main.events')
-    .controller('events', function($scope, eventData){
+    .controller('events', function(eventData){
         
         var eventsCtrl = this;
         eventsCtrl.events = eventData;
