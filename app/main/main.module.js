@@ -68,4 +68,6 @@ angular
     
     https://scotch.io/tutorials/3-simple-tips-for-using-ui-router
     
+    # If using resolve in state object, the controller WILL NOT be instantiated if a promise is rejected
+    
  */

@@ -7,6 +7,9 @@
             <ul>
                 <li ng-repeat="event in eventsCtrl.events">{{event.name}}</li>
             </ul>
+            <p class="text-danger" ng-show="eventsCtrl.getEventsErrorMsg">
+                Error getting them events! :(
+            </p>
         </div>
     </div>
 </div>

@@ -4,16 +4,19 @@ angular
         
         var eventsCtrl = this;
         eventsCtrl.events = [];
+        eventsCtrl.getEventsErrorMsg = '';
         
         var getEventsSuccess = function(data){
             console.log("success getting events");
             console.log(data);
             
+            eventsCtrl.getEventsErrorMsg = '';
             eventsCtrl.events = data;
         }
         
         var getEventsError = function(msg){
             console.log("error getting events");
+            eventsCtrl.getEventsErrorMsg = 'error getting events';
         }
         
         var getEventsFinally = function(){
