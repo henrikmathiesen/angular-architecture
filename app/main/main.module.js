@@ -1,5 +1,5 @@
 angular
-    .module('main', ['ui.router', 'main.shared', 'main.start', 'main.about', 'main.responsivejs'])
+    .module('main', ['ui.router', 'main.shared', 'main.start', 'main.about', 'main.responsivejs', 'main.events'])
     .config(function($urlRouterProvider, $stateProvider){
        console.log("Main Config");
        
@@ -29,6 +29,14 @@ angular
             data: {
                 title: 'Responsive JS'
             }    
+        })
+        .state('events', {
+            url: '/events',
+            templateUrl: '/app/events/events.template.html',
+            controller: 'events as eventCtrl',
+            data: {
+                title: 'The Events Yeah!'
+            }
         })
         ;
     })
