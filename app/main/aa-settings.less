@@ -7,10 +7,12 @@
 @screen-lg:1441px;
 
 // Override Bootstrap container sizes
-// @container-tablet: (720px + @grid-gutter-width);             // sm
-// @container-desktop: (940px + @grid-gutter-width);            // md
-// @container-large-desktop: (1140px + @grid-gutter-width);     // lg (site max-width)
+@container-tablet: (738px + @grid-gutter-width);
+@container-desktop: (994px + @grid-gutter-width);
+@container-large-desktop: (1411px + @grid-gutter-width);
 
+//
+//
 // HELPER DOCUMENTATION
 
 // Modified Bootstrap break points
@@ -59,6 +61,13 @@
 */
 
 // Bootstrap original .container size
-// @container-tablet: (720px + @grid-gutter-width);             // sm
-// @container-desktop: (940px + @grid-gutter-width);            // md
-// @container-large-desktop: (1140px + @grid-gutter-width);     // lg (site max-width)
+// @grid-gutter-width: 30px;
+// width: auto;                                                 auto on xs
+// @container-tablet: (720px + @grid-gutter-width);             750 on sm
+// @container-desktop: (940px + @grid-gutter-width);            970 on md
+// @container-large-desktop: (1140px + @grid-gutter-width);     1170 on lg (site max-width)
+
+// Modified Bootstrap .container size
+// @container-tablet: (738px + @grid-gutter-width);             (768-30) + 30   = 768 on sm
+// @container-desktop: (994px + @grid-gutter-width);            (1024-30) + 30  = 1024 on md
+// @container-large-desktop: (1411px + @grid-gutter-width);     (1441-30) + 30  = 1441 on lg
