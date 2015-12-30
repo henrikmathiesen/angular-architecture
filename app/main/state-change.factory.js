@@ -5,20 +5,27 @@ angular
         var _isLoading = false;
         
         var handleStateEvents = function(){
-            $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+            
+            //
+            // event, toState, toParams, fromState, fromParams
+            $rootScope.$on('$stateChangeStart', function (event, toState) {
                 console.log("$stateChangeStart");
                 if(toState.resolve) {
                     _isLoading = true;
                 }
             });
-                
-            $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+            
+            //
+            // cb signature: event, toState, toParams, fromState, fromParams
+            $rootScope.$on('$stateChangeSuccess', function (event, toState) {
                 console.log("$stateChangeSuccess");
                 if(toState.resolve) {
                     _isLoading = false;
                 }
             });
             
+            //
+            // cb signature: event, toState, toParams, fromState, fromParams, error
             $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
                 console.log("$stateChangeError");
                 if(toState.resolve) {
@@ -28,9 +35,12 @@ angular
                 $state.go('error', { errorInfo: { toStateTitle: toState.data.title, errorMessage: error.statusText } });
             });
             
-            $rootScope.$on('$stateNotFound', function (event, unfoundState, fromState, fromParams) {
+            //
+            // cb signature: event, unfoundState, fromState, fromParams
+            $rootScope.$on('$stateNotFound', function () {
                 console.log("$stateNotFound");
             });
+            
         };
         
         var getIsLoading = function(){

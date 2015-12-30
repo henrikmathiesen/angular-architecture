@@ -6,7 +6,7 @@ angular
             scope: {
                 callback: '&'
             },
-            link: function(scope, $element, attributes){
+            link: function(scope, $element){
                 $element.on('click', function(){
                     $element.fadeOut({
                         done: scope.callback
