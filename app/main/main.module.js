@@ -51,6 +51,11 @@ angular
                     eventData: function(eventsData, $stateParams){
                         return eventsData[(parseInt($stateParams.id))];
                     }
+                },
+                onEnter: function(eventData, $state){
+                    if(!eventData) {
+                        $state.go('events');
+                    }
                 }
             })
             .state('error', {
