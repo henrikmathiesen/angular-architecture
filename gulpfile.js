@@ -4,6 +4,8 @@ var concatJs = require('gulp-concat');
 var ngAnnotate = require('gulp-ng-annotate');
 var stripDebug = require('gulp-strip-debug');
 var uglifyJs = require('gulp-uglify');
+var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
 
 var less = require('gulp-less');
 var autoprefix = require('gulp-autoprefixer');
@@ -76,6 +78,11 @@ gulp.task('js-lib', function () {
 gulp.task('js-app', function(){
     return gulp
         .src(jsAppSrc)
+        
+        .pipe(jshint())
+        .pipe(jshint.reporter(stylish))
+        .pipe(jshint.reporter('fail'))
+        
         .pipe(gulpif(!isProduction, sourceMaps.init()))
         
         .pipe(concatJs('app.js'))

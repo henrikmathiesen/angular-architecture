@@ -11,5 +11,5 @@ angular
            },
            controllerAs: 'ctrl',
            bindToController: true
-       } 
+       };
     });

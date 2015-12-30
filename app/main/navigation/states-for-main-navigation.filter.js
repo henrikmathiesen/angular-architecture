@@ -7,19 +7,19 @@ angular
             states.shift();
             
             // Remove states that does not have an URL
-            for (var index = 0; index < states.length; index++) {
-                if(!states[index].url) {
-                    states.splice([index], 1);
+            for (var i = 0; i < states.length; i++) {
+                if(!states[i].url) {
+                    states.splice([i], 1);
                 }
             }
             
             // Remove states that is a sub state
-            for (var index = 0; index < states.length; index++) {
-                if(states[index].name.indexOf('.') > -1) {
-                    states.splice([index], 1);
+            for (var j = 0; j < states.length; j++) {
+                if(states[j].name.indexOf('.') > -1) {
+                    states.splice([j], 1);
                 }
             }
             
             return states;
-        }
+        };
     });

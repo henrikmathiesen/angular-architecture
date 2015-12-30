@@ -15,7 +15,7 @@ angular
         
         return {
             getEvents: getEvents
-        }
+        };
         
     });
         

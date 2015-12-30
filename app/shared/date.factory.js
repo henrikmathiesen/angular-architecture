@@ -54,6 +54,6 @@ angular
             getTimeNosec: getTimeNoSec,
             getDate: getDate,
             getWeekDay: getWeekDay
-        }
+        };
 
     });

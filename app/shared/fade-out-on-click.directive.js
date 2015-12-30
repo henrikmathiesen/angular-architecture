@@ -10,8 +10,8 @@ angular
                 $element.on('click', function(){
                     $element.fadeOut({
                         done: scope.callback
-                    })
+                    });
                 });
             }
-        }
+        };
     });

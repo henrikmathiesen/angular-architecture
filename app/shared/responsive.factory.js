@@ -16,6 +16,6 @@ angular
         
         return {
             isRange: isRange
-        }
+        };
         
     });
