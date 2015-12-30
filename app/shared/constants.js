@@ -11,4 +11,8 @@ angular
         thursday: 'Thursday',
         friday: 'Friday',
         saturday: 'Saturday'
+    })
+    
+    .constant('errorMessagesConstant', {
+        s404: 'View not found'
     });

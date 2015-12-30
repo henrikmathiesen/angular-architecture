@@ -1,8 +1,15 @@
 angular
     .module('main')
-    .factory('stateChangeFactory', function($rootScope, $state){
+    .factory('stateChangeFactory', function($rootScope, $state, errorMessagesConstant){
         
         var _isLoading = false;
+        
+        var _goToErrorState = function(toStateTitle, errorMessage){
+            $state.go('error', { errorInfo: { 
+                        toStateTitle: toStateTitle, 
+                        errorMessage: errorMessage } 
+                    });
+        };
         
         var handleStateEvents = function(){
             
@@ -17,10 +24,13 @@ angular
             
             //
             // cb signature: event, toState, toParams, fromState, fromParams
-            $rootScope.$on('$stateChangeSuccess', function (event, toState) {
+            $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams) {
                 console.log("$stateChangeSuccess");
-                if(toState.resolve) {
-                    _isLoading = false;
+                
+                _isLoading = false;
+                
+                if(toState.name === 's404') {
+                    _goToErrorState(toParams.path, errorMessagesConstant.s404);
                 }
             });
             
@@ -28,11 +38,11 @@ angular
             // cb signature: event, toState, toParams, fromState, fromParams, error
             $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
                 console.log("$stateChangeError");
-                if(toState.resolve) {
-                    _isLoading = false;
-                }
                 
-                $state.go('error', { errorInfo: { toStateTitle: toState.data.title, errorMessage: error.statusText } });
+                _isLoading = false;
+                
+                _goToErrorState(toState.data.title, error.statusText);
+                
             });
             
             //

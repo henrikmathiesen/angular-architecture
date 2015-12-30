@@ -3,7 +3,7 @@ angular
     .config(function ($urlRouterProvider, $stateProvider) {
         console.log("Main Config");
 
-        // $urlRouterProvider comes from 'ui.router' (with ng-route we specify otherwise in $routeProvder)
+        // $urlRouterProvider comes from 'ui.router' (with ng-route we specify otherwise in $routeProvider)
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
@@ -49,12 +49,12 @@ angular
                 templateUrl: '/app/event/event.template.html',
                 controller: 'event as eventCtrl',
                 resolve: {
-                    eventData: function(eventsData, $stateParams){
+                    eventData: function (eventsData, $stateParams) {
                         return eventsData[(parseInt($stateParams.id))];
                     }
                 },
-                onEnter: function(eventData, $state){
-                    if(!eventData) {
+                onEnter: function (eventData, $state) {
+                    if (!eventData) {
                         $state.go('events');
                     }
                 }
@@ -70,6 +70,9 @@ angular
                     // This object can also be used to set default values to url parameters
                     errorInfo: null
                 }
+            })
+            .state("s404", {
+                url: "/*path"
             });
     })
     .run(function ($state, stateChangeFactory) {
