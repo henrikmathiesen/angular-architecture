@@ -3,6 +3,7 @@ angular
     .config(function ($urlRouterProvider, $stateProvider) {
         console.log("Main Config");
 
+        // $urlRouterProvider comes from 'ui.router' (with ng-route we specify otherwise in $routeProvder)
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
@@ -66,6 +67,7 @@ angular
                 },
                 params: {
                     // Since this state does not have an url, we cant send parameter that way. This way works instead
+                    // This object can also be used to set default values to url parameters
                     errorInfo: null
                 }
             });

@@ -6,7 +6,7 @@
             </p>
             <ul>
                 <li ng-repeat="event in eventsCtrl.events">
-                    <a ui-sref=".event({id: {{event.id}} })">{{event.name}}</a>
+                    <a ui-sref=".event({id: event.id })">{{event.name}}</a>
                 </li>
             </ul>
         </div>
