@@ -2,13 +2,22 @@ angular
     .module('main')
     .factory('stateChangeFactory', function($rootScope, $state){
         
+        var _isLoading = false;
+        
         var handleStateEvents = function(){
             $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
                 console.log("<### $stateChangeStart ###>");
+                console.log(toState);
+                if(toState.resolve) {
+                    _isLoading = true;
+                }
             });
                 
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
                 console.log("<### $stateChangeSuccess ###>");
+                if(toState.resolve) {
+                    _isLoading = false;
+                }
             });
             
             $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
@@ -21,6 +30,10 @@ angular
                 console.log(error);
                 console.log("<---------------------------->");
                 
+                if(toState.resolve) {
+                    _isLoading = false;
+                }
+                
                 $state.go('error', { errorInfo: { toStateTitle: toState.data.title, errorMessage: error.statusText } });
             });
             
@@ -29,8 +42,13 @@ angular
             });
         };
         
+        var getIsLoading = function(){
+            return _isLoading;
+        };
+        
         return {
-            handleStateEvents: handleStateEvents
+            handleStateEvents: handleStateEvents,
+            getIsLoading: getIsLoading
         };
         
     });

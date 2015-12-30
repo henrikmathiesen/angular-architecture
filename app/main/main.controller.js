@@ -1,9 +1,10 @@
 angular
     .module('main')
-    .controller('main', function(){
+    .controller('main', function(stateChangeFactory){
     
     var mainCtrl = this;
     
+    mainCtrl.stateChangeFactory = stateChangeFactory;
     mainCtrl.title = "Angular Architecture";
     
 });

@@ -12,7 +12,7 @@
     <!-- endinject -->
 </head>
 
-<body ng-controller="main as mainCtrl" ng-cloak="" class="container">
+<body ng-controller="main as mainCtrl" ng-cloak="" class="container" ng-class="{'loading': mainCtrl.stateChangeFactory.getIsLoading()}">
     <div class="row">
         <div class="col-md-12">
             <h1>{{::mainCtrl.title}}</h1>
@@ -31,6 +31,9 @@
         </div>
     </div>
     <ui-view></ui-view>
+    
+    
+    <aa-loading></aa-loading>
 
     <div class="device-xs visible-xs"></div>
     <div class="device-sm visible-sm"></div>

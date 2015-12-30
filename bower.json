@@ -18,6 +18,7 @@
     "jquery": "~2.1.4",
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.6",
-    "fastclick": "~1.0.6"
+    "fastclick": "~1.0.6",
+    "fontawesome": "~4.5.0"
   }
 }
