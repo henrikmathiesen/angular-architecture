@@ -6,21 +6,21 @@ angular
         
         var handleStateEvents = function(){
             $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-                console.log("STC-START");
-                console.log(fromState);
+                console.log("$stateChangeStart");
                 if(toState.resolve) {
                     _isLoading = true;
                 }
             });
                 
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-                console.log("STC-SUCS");
+                console.log("$stateChangeSuccess");
                 if(toState.resolve) {
                     _isLoading = false;
                 }
             });
             
             $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
+                console.log("$stateChangeError");
                 if(toState.resolve) {
                     _isLoading = false;
                 }
@@ -29,7 +29,7 @@ angular
             });
             
             $rootScope.$on('$stateNotFound', function (event, unfoundState, fromState, fromParams) {
-                console.log("<### $stateNotFound ###>");
+                console.log("$stateNotFound");
             });
         };
         

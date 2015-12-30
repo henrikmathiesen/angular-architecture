@@ -48,8 +48,8 @@ angular
                 templateUrl: '/app/event/event.template.html',
                 controller: 'event as eventCtrl',
                 resolve: {
-                    eventData: function(eventsData){
-                        return eventsData;
+                    eventData: function(eventsData, $stateParams){
+                        return eventsData[(parseInt($stateParams.id))];
                     }
                 }
             })

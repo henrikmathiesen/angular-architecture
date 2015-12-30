@@ -1,9 +1,12 @@
 angular
     .module('main.event')
-    .controller('event', function(){
+    .controller('event', function(eventData, $state){
         
         var eventCtrl = this;
+        eventCtrl.event = eventData;
         
-        console.log("EVENT CTRL");
+        if(!eventCtrl.event) {
+            $state.go('events');
+        }
         
     });

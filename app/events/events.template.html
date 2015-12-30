@@ -5,7 +5,9 @@
                 Da events ...
             </p>
             <ul>
-                <li ng-repeat="event in eventsCtrl.events">{{event.name}}</li>
+                <li ng-repeat="event in eventsCtrl.events">
+                    <a ui-sref=".event({id: {{event.id}} })">{{event.name}}</a>
+                </li>
             </ul>
         </div>
     </div>
