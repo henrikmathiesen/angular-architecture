@@ -6,30 +6,18 @@ angular
         
         var handleStateEvents = function(){
             $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-                console.log("<### $stateChangeStart ###>");
-                console.log(toState);
                 if(toState.resolve) {
                     _isLoading = true;
                 }
             });
                 
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-                console.log("<### $stateChangeSuccess ###>");
                 if(toState.resolve) {
                     _isLoading = false;
                 }
             });
             
             $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
-                console.log("<### $stateChangeError ###>");
-                console.log(event);
-                console.log(toState);
-                console.log(toParams);
-                console.log(fromState);
-                console.log(fromParams);
-                console.log(error);
-                console.log("<---------------------------->");
-                
                 if(toState.resolve) {
                     _isLoading = false;
                 }
