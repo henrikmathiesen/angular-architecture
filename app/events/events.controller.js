@@ -1,8 +1,8 @@
 angular
     .module('main.events')
-    .controller('events', function(eventData){
+    .controller('events', function(eventsData){
         
         var eventsCtrl = this;
-        eventsCtrl.events = eventData;
+        eventsCtrl.events = eventsData;
         
     });

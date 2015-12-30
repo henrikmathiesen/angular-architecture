@@ -1,5 +1,5 @@
 angular
-    .module('main', ['ui.router', 'main.shared', 'main.start', 'main.about', 'main.responsivejs', 'main.events', 'main.error'])
+    .module('main', ['ui.router', 'main.shared', 'main.start', 'main.about', 'main.responsivejs', 'main.events', 'main.event', 'main.error'])
     .config(function ($urlRouterProvider, $stateProvider) {
         console.log("Main Config");
 
@@ -38,8 +38,18 @@ angular
                     title: 'The Events Yeah!'
                 },
                 resolve: {
-                    eventData: function (eventsFactory) {
+                    eventsData: function (eventsFactory) {
                         return eventsFactory.getEvents();
+                    }
+                }
+            })
+            .state('events.event', {
+                url: '/event/:id',
+                templateUrl: '/app/event/event.template.html',
+                controller: 'event as eventCtrl',
+                resolve: {
+                    eventData: function(eventsData){
+                        return eventsData;
                     }
                 }
             })

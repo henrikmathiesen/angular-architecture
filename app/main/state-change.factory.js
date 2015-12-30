@@ -6,12 +6,15 @@ angular
         
         var handleStateEvents = function(){
             $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+                console.log("STC-START");
+                console.log(fromState);
                 if(toState.resolve) {
                     _isLoading = true;
                 }
             });
                 
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+                console.log("STC-SUCS");
                 if(toState.resolve) {
                     _isLoading = false;
                 }

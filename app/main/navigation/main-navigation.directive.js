@@ -5,12 +5,12 @@ angular
             scope: {},
             templateUrl: '/app/main/navigation/main-navigation.template.html',
             replace: true,
-            controller: function ($state) {
+            controller: function ($state, $filter) {
                 var ctrl = this;
                 
-                // Remove the first abstract state from the array
-                ctrl.states = $state.get();
-                ctrl.states.shift();
+                // Filter states for view
+                ctrl.states = $filter('statesForMainNavigationFilter')($state.get());
+                
             },
             controllerAs: 'ctrl',
             bindToController: true
