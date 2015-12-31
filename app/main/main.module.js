@@ -1,5 +1,17 @@
 angular
-    .module('main', ['ui.router', 'main.shared', 'main.start', 'main.about', 'main.responsivejs', 'main.events', 'main.event', 'main.papa', 'main.error']);
+    .module('main', [
+        'ui.router',
+         
+        'main.shared', 
+        'main.start', 
+        'main.about', 
+        'main.responsivejs', 
+        'main.events', 
+        'main.event', 
+        'main.papa',
+        'main.papaabstract', 
+        'main.error'
+        ]);
     
 angular
     .module('main').run(function ($state, stateChangeFactory) {

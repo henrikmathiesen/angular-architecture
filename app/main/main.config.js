@@ -102,6 +102,34 @@ angular
                     showInMenu: false
                 }
             })
+            .state('papaabstract', {
+                // An abstract state can not be activated, activated implicitly when a child state is activated
+                // URL is optional, if specfied then it will be appendet to all child states
+                // Child states can also have their own controllers
+                abstract: true,
+                //url: '/papaabstract',
+                template: '<ui-view></ui-view>',
+                controller: 'papaabstract as papaabstractCtrl',
+                data: {
+                    showInMenu: false
+                }
+            })
+            .state('papaabstract.abstractchilda', {
+                url: '/abstractchilda',
+                templateUrl: '/app/papaabstract/papaabstract-abstractchilda.template.html',
+                data: {
+                    title: 'Abstract child A',
+                    showInMenu: true
+                }
+            })
+            .state('papaabstract.abstractchildb', {
+                url: '/abstractchildb',
+                templateUrl: '/app/papaabstract/papaabstract-abstractchildb.template.html',
+                data: {
+                    title: 'Abstract child B',
+                    showInMenu: true
+                }
+            })
             .state('error', {
                 templateUrl: '/app/error/error.template.html',
                 controller: 'error as errorCtrl',
