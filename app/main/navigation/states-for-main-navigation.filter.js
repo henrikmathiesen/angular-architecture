@@ -3,32 +3,15 @@ angular
     .filter('statesForMainNavigationFilter', function(){
         return function(states){
             
-            // Remove the abstract state, at index 0, from the array
-            states.shift();
+            var filteredStates = [];
             
-            // var _stateDoesNotHaveAnUrl = function(state){
-            //     return state.url !== true;
-            // };
-            // 
-            // var _stateIsThes404State = function(state){
-            //     return state.name === 's404';
-            // };
-            // 
-            // var _stateIsNestedState = function(state){
-            //     return state.name.indexOf('.') > -1;
-            // };
-            // 
-            // for (var i = 0; i < states.length; i++) {
-            //     console.log(i);
-            //     if(_stateDoesNotHaveAnUrl(states[i]) || _stateIsThes404State(states[i]) || _stateIsNestedState(states[i])) {
-            //         console.log("=== SPLICING ===");
-            //         console.log(states[i]);
-            //         console.log("=== /SPLICING ===");
-            //         states.splice([i], 1);
-            //         //continue;
-            //     }
-            // }
+            // Filter out the first state since it is the default parent abstract state, and states with showInMenu = false
+            for (var index = 0; index < states.length; index++) {
+                if(index > 0 && states[index].data.showInMenu) {
+                    filteredStates.push(states[index]);
+                }
+            }
             
-            return states;
+            return filteredStates;
         };
     });

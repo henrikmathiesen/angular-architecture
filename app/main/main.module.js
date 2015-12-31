@@ -12,7 +12,8 @@ angular
                 templateUrl: '/app/start/start.template.html',
                 controller: 'start as startCtrl',
                 data: {
-                    title: 'Start'
+                    title: 'Start',
+                    showInMenu: true
                 }
             })
             .state('about', {
@@ -20,7 +21,8 @@ angular
                 templateUrl: '/app/about/about.template.html',
                 controller: 'about as aboutCtrl',
                 data: {
-                    title: 'About'
+                    title: 'About',
+                    showInMenu: true
                 }
             })
             .state('responsivejs', {
@@ -28,7 +30,8 @@ angular
                 templateUrl: '/app/responsivejs/responsivejs.template.html',
                 controller: 'responsivejs as responsivejsCtrl',
                 data: {
-                    title: 'Responsive JS'
+                    title: 'Responsive JS',
+                    showInMenu: true
                 }
             })
             .state('events', {
@@ -36,7 +39,8 @@ angular
                 templateUrl: '/app/events/events.template.html',
                 controller: 'events as eventsCtrl',
                 data: {
-                    title: 'The Events Yeah!'
+                    title: 'The Events Yeah!',
+                    showInMenu: true
                 },
                 resolve: {
                     eventsData: function (eventsFactory) {
@@ -48,6 +52,9 @@ angular
                 url: '/event/:id',
                 templateUrl: '/app/event/event.template.html',
                 controller: 'event as eventCtrl',
+                data: {
+                    showInMenu: false
+                },
                 resolve: {
                     eventData: function (eventsData, $stateParams) {
                         return eventsData[(parseInt($stateParams.id))];
@@ -63,7 +70,8 @@ angular
                 templateUrl: '/app/error/error.template.html',
                 controller: 'error as errorCtrl',
                 data: {
-                    title: 'An error is upon us!!'
+                    title: 'An error is upon us!!',
+                    showInMenu: false
                 },
                 params: {
                     // Since this state does not have an url, we cant send parameter that way. This way works instead
@@ -72,7 +80,10 @@ angular
                 }
             })
             .state("s404", {
-                url: "/*path"
+                url: "/*path",
+                data: {
+                    showInMenu: false
+                }
             });
     })
     .run(function ($state, stateChangeFactory) {
