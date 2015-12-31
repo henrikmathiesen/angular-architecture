@@ -1,5 +1,5 @@
 angular
-    .module('main', ['ui.router', 'main.shared', 'main.start', 'main.about', 'main.responsivejs', 'main.events', 'main.event', 'main.error'])
+    .module('main', ['ui.router', 'main.shared', 'main.start', 'main.about', 'main.responsivejs', 'main.events', 'main.event', 'main.papa', 'main.error'])
     .config(function ($urlRouterProvider, $stateProvider) {
         console.log("Main Config");
 
@@ -48,6 +48,7 @@ angular
                     }
                 }
             })
+        // It seems like this can be the ONLY nested state of events
             .state('events.event', {
                 url: '/event/:id',
                 templateUrl: '/app/event/event.template.html',
@@ -63,6 +64,29 @@ angular
                 onEnter: function (eventData, $state) {
                     if (!eventData) {
                         $state.go('events');
+                    }
+                }
+            })
+            .state('papa', {
+                url: '/papa',
+                data: {
+                    title: 'The Papa',
+                    showInMenu: true
+                },
+                views: {
+                    '': {
+                        templateUrl: '/app/papa/papa.template.html',
+                        controller: 'papa as papaCtrl',
+                    },
+                    'childA@papa': {
+                        template: '<p>Look Iam child</p>'
+                    },
+                    'childB@papa': {
+                        template: '<p>Iam also a child</p>'
+                    },
+                    'about@papa': {
+                        templateUrl: '/app/about/about.template.html',
+                        controller: 'about as aboutCtrl',
                     }
                 }
             })
