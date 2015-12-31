@@ -78,7 +78,7 @@ angular
                         controller: 'papa as papaCtrl',
                     },
                     'childA@papa': {
-                        template: '<p>Look Iam child</p>'
+                        template: '<p>Look Iam a child</p>'
                     },
                     'childB@papa': {
                         template: '<p>Iam also a child</p>'
