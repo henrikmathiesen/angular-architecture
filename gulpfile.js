@@ -126,15 +126,15 @@ gulp.task('default', ['clean-bld', 'js-lib', 'js-app', 'less'], function(){
     injectToHtml();
 });
 
-gulp.task('watch', ['default'], function(){
-    gulp.watch(jsAppSrc, ['js-app']);
-    gulp.watch(lessSrcWatch, ['less']);
-});
-
 gulp.task('test', function (done) {
   new Server({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true,
     verbose: true
   }, done).start();
+});
+
+gulp.task('watch', ['default'], function(){
+    gulp.watch(jsAppSrc, ['js-app']);
+    gulp.watch(lessSrcWatch, ['less']);
 });
