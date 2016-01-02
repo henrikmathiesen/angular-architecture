@@ -1,3 +1,5 @@
+/* global __dirname */
+
 var gulp = require('gulp');
 
 var concatJs = require('gulp-concat');
@@ -17,6 +19,8 @@ var gulpif = require('gulp-if');
 var rev = require('gulp-rev');
 var inject = require('gulp-inject');
 var argv = require('yargs').argv;
+
+var Server = require('karma').Server;
 
 var isProduction = (argv.prod) ? (true) : (false);
 var resetinject = (argv.resetinject) ? (true) : (false);
@@ -125,4 +129,12 @@ gulp.task('default', ['clean-bld', 'js-lib', 'js-app', 'less'], function(){
 gulp.task('watch', ['default'], function(){
     gulp.watch(jsAppSrc, ['js-app']);
     gulp.watch(lessSrcWatch, ['less']);
+});
+
+gulp.task('test', function (done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true,
+    verbose: true
+  }, done).start();
 });
