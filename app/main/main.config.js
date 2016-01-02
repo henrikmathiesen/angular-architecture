@@ -78,19 +78,19 @@ angular
                         controller: 'papa as papaCtrl',
                     },
                     'childA@papa': {
-                        template: '<p>Look Iam a child</p>'
+                        template: '<p>Look Iam a child. {{papaCtrl.foo}}</p>'           // We can grab thins from parent ctrl
                     },
                     'childB@papa': {
                         template: '<p>Iam also a child</p>'
                     },
                     'about@papa': {
-                        templateUrl: '/app/about/about.template.html',
+                        templateUrl: '/app/about/about.template.html',                  // This template also uses foo, only visible when child to papa
                         controller: 'about as aboutCtrl',
                     }
                 }
             })
             .state('papa.childsA', {
-                template: '<p>Iam childSA, the url has changed</p>',
+                template: '<p>Iam childSA, the url has changed. {{papaCtrl.foo}}</p>',  // We can grab thins from parent ctrl
                 url: '/childsa',
                 data: {
                     showInMenu: false
