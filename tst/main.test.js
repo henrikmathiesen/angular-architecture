@@ -68,3 +68,21 @@ describe("main navigation directive provides the navigation to the user", functi
     });
     
 });
+
+describe("main.shared", function(){
+    
+    var dateFactory;
+    
+    beforeEach(function(){
+        module('main.shared');
+        
+        inject(function(_dateFactory_){
+            dateFactory = _dateFactory_;
+        });
+    });
+    
+    it("should have a dateFactory registred to it with various methods", function(){
+        expect(dateFactory.getTime).toBeDefined();
+    });
+    
+});
