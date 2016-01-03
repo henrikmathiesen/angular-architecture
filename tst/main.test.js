@@ -58,8 +58,8 @@ describe("main navigation directive provides the navigation to the user", functi
     it("should generate an ul with n number of li's, where n = number of ui.router states gone through a custom filter", function(){
         var element = '<aa-main-navigation></aa-main-navigation>';
         var html = $compile(element)($scope);
-        //$rootScope.$digest();
-        //dump(angular.mock.dump(angular.element(html).html()));
+        $rootScope.$digest();
+        dump(angular.mock.dump(angular.element(html).html()));
     });
     
 });
