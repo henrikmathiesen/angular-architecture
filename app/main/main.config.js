@@ -5,11 +5,13 @@ angular
 
         // $urlRouterProvider comes from 'ui.router' (with ng-route we specify otherwise in $routeProvider)
         $urlRouterProvider.otherwise('/');
+        
+        // templateUrl points to keys set by gulp job for templateCaching, the job creates a run block on module 'templates'
 
         $stateProvider
             .state('start', {
                 url: '/',
-                templateUrl: '/app/start/start.template.html',
+                templateUrl: 'start/start.template.html',
                 controller: 'start as startCtrl',
                 data: {
                     title: 'Start',
@@ -18,7 +20,7 @@ angular
             })
             .state('about', {
                 url: '/about',
-                templateUrl: '/app/about/about.template.html',
+                templateUrl: 'about/about.template.html',
                 controller: 'about as aboutCtrl',
                 data: {
                     title: 'About',
@@ -27,7 +29,7 @@ angular
             })
             .state('responsivejs', {
                 url: '/responsivejs',
-                templateUrl: '/app/responsivejs/responsivejs.template.html',
+                templateUrl: 'responsivejs/responsivejs.template.html',
                 controller: 'responsivejs as responsivejsCtrl',
                 data: {
                     title: 'Responsive JS',
@@ -36,7 +38,7 @@ angular
             })
             .state('events', {
                 url: '/events',
-                templateUrl: '/app/events/events.template.html',
+                templateUrl: 'events/events.template.html',
                 controller: 'events as eventsCtrl',
                 data: {
                     title: 'The Events Yeah!',
@@ -50,7 +52,7 @@ angular
             })
             .state('events.event', {
                 url: '/event/:id',
-                templateUrl: '/app/event/event.template.html',
+                templateUrl: 'event/event.template.html',
                 controller: 'event as eventCtrl',
                 data: {
                     showInMenu: false
@@ -74,7 +76,7 @@ angular
                 },
                 views: {
                     '': {
-                        templateUrl: '/app/papa/papa.template.html',
+                        templateUrl: 'papa/papa.template.html',
                         controller: 'papa as papaCtrl',
                     },
                     'childA@papa': {
@@ -84,7 +86,7 @@ angular
                         template: '<p>Iam also a child</p>'
                     },
                     'about@papa': {
-                        templateUrl: '/app/about/about.template.html',                  // This template also uses foo, only visible when child to papa
+                        templateUrl: 'about/about.template.html',                  // This template also uses foo, only visible when child to papa
                         controller: 'about as aboutCtrl',
                     }
                 }
@@ -116,7 +118,7 @@ angular
             })
             .state('papaabstract.abstractchilda', {
                 url: '/abstractchilda',
-                templateUrl: '/app/papaabstract/papaabstract-abstractchilda.template.html',
+                templateUrl: 'papaabstract/papaabstract-abstractchilda.template.html',
                 data: {
                     title: 'Abstract child A',
                     showInMenu: true
@@ -124,14 +126,14 @@ angular
             })
             .state('papaabstract.abstractchildb', {
                 url: '/abstractchildb',
-                templateUrl: '/app/papaabstract/papaabstract-abstractchildb.template.html',
+                templateUrl: 'papaabstract/papaabstract-abstractchildb.template.html',
                 data: {
                     title: 'Abstract child B',
                     showInMenu: true
                 }
             })
             .state('error', {
-                templateUrl: '/app/error/error.template.html',
+                templateUrl: 'error/error.template.html',
                 controller: 'error as errorCtrl',
                 data: {
                     title: 'An error is upon us!!',

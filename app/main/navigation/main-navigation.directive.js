@@ -4,7 +4,7 @@ angular
         return {
             restrict:'E',
             scope: {},
-            templateUrl: '/app/main/navigation/main-navigation.template.html',
+            templateUrl: 'main/navigation/main-navigation.template.html',
             replace: true,
             controller: function ($state, $filter) {
                 var ctrl = this;

@@ -54,8 +54,8 @@ var bldFolder = 'bld';
 var injectToHtml = function () {
     var sourcesToInject = gulp.src([
         bldFolder + '/lib*.js',
-        bldFolder + '/templates*.js',
         bldFolder + '/app*.js',
+        bldFolder + '/templates*.js',
         bldFolder + '/main*.css'
     ], { read: false });
 
