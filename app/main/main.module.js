@@ -10,7 +10,9 @@ angular
         'main.event', 
         'main.papa',
         'main.papaabstract', 
-        'main.error'
+        'main.error',
+        
+        'templates'
         ]);
     
 angular
