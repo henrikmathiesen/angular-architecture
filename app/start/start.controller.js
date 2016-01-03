@@ -8,4 +8,8 @@ angular
            console.log("fadeOutCallback ran in start controller");
        };
        
+       startCtrl.search = function(){
+           console.log("<--- FAKE SEARCH --->");
+       };
+       
     });
