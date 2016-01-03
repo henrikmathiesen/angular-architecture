@@ -59,7 +59,12 @@ describe("main navigation directive provides the navigation to the user", functi
         var element = '<aa-main-navigation></aa-main-navigation>';
         var html = $compile(element)($scope);
         $rootScope.$digest();
-        dump(angular.mock.dump(angular.element(html).html()));
+        
+        var lis = angular.element(html).find('li');
+        var filteredStates = $filter('statesForMainNavigationFilter')($state.get());
+        
+        expect(lis.length).toEqual(filteredStates.length);
+        
     });
     
 });
