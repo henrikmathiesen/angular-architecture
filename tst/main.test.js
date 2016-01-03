@@ -34,3 +34,32 @@ describe("main module", function () {
     });
 
 });
+
+describe("main navigation directive provides the navigation to the user", function(){
+    
+    var $filter;
+    var $state;
+    var $compile;
+    var $rootScope;
+    var $scope;
+    
+    beforeEach(function(){
+        module('main');
+        
+        inject(function(_$filter_, _$state_, _$compile_, _$rootScope_){
+            $filter = _$filter_;
+            $state = _$state_;
+            $compile = _$compile_;
+            $rootScope = _$rootScope_;
+            $scope = _$rootScope_.$new();
+        });
+    });
+    
+    it("should generate an ul with n number of li's, where n = number of ui.router states gone through a custom filter", function(){
+        var element = '<aa-main-navigation></aa-main-navigation>';
+        var html = $compile(element)($scope);
+        //$rootScope.$digest();
+        //dump(angular.mock.dump(angular.element(html).html()));
+    });
+    
+});

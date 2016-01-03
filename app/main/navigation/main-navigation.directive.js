@@ -2,6 +2,7 @@ angular
     .module('main')
     .directive('aaMainNavigation', function () {
         return {
+            restrict:'E',
             scope: {},
             templateUrl: '/app/main/navigation/main-navigation.template.html',
             replace: true,
