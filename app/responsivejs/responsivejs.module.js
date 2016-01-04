@@ -1,1 +1,1 @@
-angular.module('main.responsivejs', []);
+angular.module('main.responsivejs', ['main.shared']);

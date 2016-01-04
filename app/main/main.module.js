@@ -1,8 +1,10 @@
 angular
     .module('main', [
         'ui.router',
+        'templates',
          
         'main.shared', 
+        
         'main.start', 
         'main.about', 
         'main.responsivejs', 
@@ -12,7 +14,6 @@ angular
         'main.papaabstract', 
         'main.error',
         
-        'templates'
         ]);
     
 angular
@@ -36,6 +37,11 @@ angular
     - main modules run
     
     # Order of module dependencies does not seem to matter
+    
+    # Two modules that needs the same services will both reference a dependant to the service module
+    - That makes unit testing one individual module easier, since it then loads its dependencies on its own
+    - This is ok: "Each module can only be loaded once, even if multiple other modules require it."
+        https://docs.angularjs.org/guide/module
     
     # Can NOT inject service into config
     # CAN inject service into run

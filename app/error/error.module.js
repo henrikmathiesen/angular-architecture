@@ -1,1 +1,1 @@
-angular.module('main.error', []);
+angular.module('main.error', ['ui.router']);

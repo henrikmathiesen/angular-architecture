@@ -1,1 +1,1 @@
-angular.module('main.events', []);
+angular.module('main.events', ['main.shared']);

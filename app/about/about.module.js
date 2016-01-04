@@ -1,5 +1,5 @@
 angular
-    .module('main.about', [])
+    .module('main.about', ['main.shared'])
     .config(function () {
         console.log("About Config");
     })
