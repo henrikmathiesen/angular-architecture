@@ -9,13 +9,13 @@ angular
         // <div class="device-lg visible-lg"></div>
         // Based on: http://stackoverflow.com/questions/18575582/how-to-detect-responsive-breakpoints-of-twitter-bootstrap-3-using-javascript
         
+        var responsiveFactory = {};
+        
         // alias: xs | sm | md | lg
-        var isRange = function(alias){
+        responsiveFactory.isRange = function(alias){
             return angular.element('.device-' + alias).is(':visible');
         };
         
-        return {
-            isRange: isRange
-        };
+        return responsiveFactory;
         
     });

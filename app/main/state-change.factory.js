@@ -2,23 +2,25 @@ angular
     .module('main')
     .factory('stateChangeFactory', function($rootScope, $state, errorMessagesConstant){
         
-        var _isLoading = false;
+        var stateChangeFactory = {};
         
-        var _goToErrorState = function(toStateTitle, errorMessage){
+        var isLoading = false;
+        
+        var goToErrorState = function(toStateTitle, errorMessage){
             $state.go('error', { errorInfo: { 
                         toStateTitle: toStateTitle, 
                         errorMessage: errorMessage } 
                     });
         };
         
-        var handleStateEvents = function(){
+        stateChangeFactory.handleStateEvents = function(){
             
             //
             // event, toState, toParams, fromState, fromParams
             $rootScope.$on('$stateChangeStart', function (event, toState) {
                 console.log("$stateChangeStart");
                 if(toState.resolve) {
-                    _isLoading = true;
+                    isLoading = true;
                 }
             });
             
@@ -27,10 +29,10 @@ angular
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams) {
                 console.log("$stateChangeSuccess");
                 
-                _isLoading = false;
+                isLoading = false;
                 
                 if(toState.name === 's404') {
-                    _goToErrorState(toParams.path, errorMessagesConstant.s404);
+                    goToErrorState(toParams.path, errorMessagesConstant.s404);
                 }
             });
             
@@ -39,9 +41,9 @@ angular
             $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
                 console.log("$stateChangeError");
                 
-                _isLoading = false;
+                isLoading = false;
                 
-                _goToErrorState(toState.data.title, error.statusText);
+                goToErrorState(toState.data.title, error.statusText);
                 
             });
             
@@ -53,13 +55,10 @@ angular
             
         };
         
-        var getIsLoading = function(){
-            return _isLoading;
+        stateChangeFactory.getIsLoading = function(){
+            return isLoading;
         };
         
-        return {
-            handleStateEvents: handleStateEvents,
-            getIsLoading: getIsLoading
-        };
+        return stateChangeFactory;
         
     });

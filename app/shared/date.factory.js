@@ -1,8 +1,10 @@
 angular
     .module('main.shared')
     .factory('dateFactory', function (weekDaysConstant) {
+        
+        var dateFactory = {};
 
-        var _constructDateAndTime = function () {
+        var constructDateAndTime = function () {
             var date = new Date();
 
             var year = date.getFullYear();
@@ -33,27 +35,22 @@ angular
             return currentDate;
         };
         
-        var getTime = function(){
-            return _constructDateAndTime().timeWithSeconds;
+        dateFactory.getTime = function(){
+            return constructDateAndTime().timeWithSeconds;
         };
         
-        var getTimeNoSec = function(){
-            return _constructDateAndTime().timeWithoutSeconds;
+        dateFactory.getTimeNoSec = function(){
+            return constructDateAndTime().timeWithoutSeconds;
         };
 
-        var getDate = function(){
-            return _constructDateAndTime().date;
+        dateFactory.getDate = function(){
+            return constructDateAndTime().date;
         };
         
-        var getWeekDay = function(){
-            return _constructDateAndTime().weekDay;
+        dateFactory.getWeekDay = function(){
+            return constructDateAndTime().weekDay;
         };
         
-        return {
-            getTime: getTime,
-            getTimeNosec: getTimeNoSec,
-            getDate: getDate,
-            getWeekDay: getWeekDay
-        };
+        return dateFactory;
 
     });

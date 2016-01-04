@@ -2,7 +2,9 @@ angular
     .module('main.events')
     .factory('eventsFactory', function($http, apiUrlConstant){
         
-        var getEvents = function(){
+        var eventsFactory = {};
+        
+        eventsFactory.getEvents = function(){
             var extract = function(response){
                 return response.data;
             };
@@ -13,9 +15,7 @@ angular
         };
         
         
-        return {
-            getEvents: getEvents
-        };
+        return eventsFactory;
         
     });
         
