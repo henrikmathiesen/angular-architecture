@@ -149,4 +149,5 @@ gulp.task('test', ['template-cache'], function (done) {
 gulp.task('watch', ['default'], function () {
     gulp.watch(jsAppSrc, ['js-app']);
     gulp.watch(lessSrcWatch, ['less']);
+    gulp.watch(templateSrc, ['template-cache']);
 });
