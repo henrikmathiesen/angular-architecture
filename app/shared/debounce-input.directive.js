@@ -5,7 +5,7 @@ angular
             restrict: 'A',
             scope: {
                 callback: '&',
-                delay: '='
+                delay: '@'
             },
             link: function(scope, $element){
                 var timeout;
