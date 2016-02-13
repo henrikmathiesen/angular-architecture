@@ -14,15 +14,20 @@
     </div>
     <div class="row" ng-controller="directiveShareParent as directiveShareParentCtrl">
         <div class="col-md-12 aa-parent-controller-output">
-            <h3>Directives share controller, parent controller</h3>
-            <p>If this controller was named ctrl, it would have shared scope with sub directives (which have scope=false)</p>
+            <h3>Directives share controller:s, parent controller</h3>
+            <p>If this controller was named ctrl, it would have shared scope with sub directives (which have scope:false)</p>
             <div>{{directiveShareParentCtrl.person.food}}</div>
             <div>
                 <input type="text" ng-model="directiveShareParentCtrl.person.food" />
             </div>
         </div>
-        <div class="col-md-12"><h4>Directives share controller</h4>
-            <p>Directive a, b, c must share scope (scope=false) for access to same controller in bindings</p>
+        <div class="col-md-12">
+            <h4>Directives share a controller</h4>
+            <p>
+                Directive a, b, c must share scope (scope:false) for access to same controller in bindings<br/>
+                Directives also gets access to directiveShareParentCtrl:s properties and can bind to them
+            </p>
+            <h4>Directives also share directiveShareGameFactory, they can share it and work with bindings, even with isolate scope (scope:{})</h4>
         </div>
         <aa-directive-share-controller-a></aa-directive-share-controller-a>
         <aa-directive-share-controller-b></aa-directive-share-controller-b>
