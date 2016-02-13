@@ -4,7 +4,9 @@ angular
         return {
             restrict: 'A',
             scope: {},
-            link: function(scope, $element, attributes){
+            transclude: true,
+            template: '{{:: ctrl.person.name}} {{ctrl.person.food}} {{ctrl.person.drink}} <ng-transclude></ng-transclude>',
+            link: function(scope, $element, attributes, ctrl){
                 console.log("aaDirectiveShareControllerB");
             },
             controller: 'directiveShared',
