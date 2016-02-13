@@ -12,8 +12,18 @@
             <input type="text" aa-debounce-input="" callback="startCtrl.search()" delay="2000"></input>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12"><h3>Directives share controller</h3></div>
+    <div class="row" ng-controller="directiveShareParent as directiveShareParentCtrl">
+        <div class="col-md-12 aa-parent-controller-output">
+            <h3>Directives share controller, parent controller</h3>
+            <p>If this controller was named ctrl, it would have shared scope with sub directives (which have scope=false)</p>
+            <div>{{directiveShareParentCtrl.person.food}}</div>
+            <div>
+                <input type="text" ng-model="directiveShareParentCtrl.person.food" />
+            </div>
+        </div>
+        <div class="col-md-12"><h4>Directives share controller</h4>
+            <p>Directive a, b, c must share scope (scope=false) for access to same controller in bindings</p>
+        </div>
         <aa-directive-share-controller-a></aa-directive-share-controller-a>
         <aa-directive-share-controller-b></aa-directive-share-controller-b>
     </div>

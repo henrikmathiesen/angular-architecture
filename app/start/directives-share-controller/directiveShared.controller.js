@@ -1,5 +1,5 @@
 angular
-    .module('main.shared')
+    .module('main.start')
     .controller('directiveShared', function(){
         
         var ctrl = this;

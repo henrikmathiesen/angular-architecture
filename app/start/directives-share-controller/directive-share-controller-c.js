@@ -1,13 +1,13 @@
 angular
-    .module('main.shared')
-    .directive('aaDirectiveShareControllerA', function(){
+    .module('main.start')
+    .directive('aaDirectiveShareControllerC', function(){
         return {
             restrict: 'E',
             scope: false,
-            template: '<div class="col-md-6"><div>{{::ctrl.person.name}} {{ctrl.person.food}} {{::ctrl.person.drink}}</div><div><input type="text" ng-model="ctrl.person.food"/></div></div>',
+            template: '<div>{{::ctrl.person.name}} {{ctrl.person.food}} {{::ctrl.person.drink}}</div>',
             replace: true,
             link: function(scope, $element, attributes, ctrl){
-                console.log("aaDirectiveShareControllerA");
+                console.log("aaDirectiveShareControllerC");
                 console.log(ctrl.person.food);
             },
             controller: 'directiveShared',
