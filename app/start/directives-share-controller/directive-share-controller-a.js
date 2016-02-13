@@ -9,7 +9,6 @@ angular
             link: function(scope, $element, attributes, ctrl){
                 console.log("aaDirectiveShareControllerA");
                 console.log(ctrl.person.food);
-                console.log(directiveShareGameFactory.getGame());
                 
                 scope.directiveShareGameFactory = directiveShareGameFactory;
                 

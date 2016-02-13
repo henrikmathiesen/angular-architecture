@@ -9,6 +9,7 @@ angular
             link: function(scope, $element, attributes, ctrl){
                 console.log("aaDirectiveShareControllerB");
                 console.log(ctrl.person.food);
+                
                 scope.directiveShareGameFactory = directiveShareGameFactory;
             },
             controller: 'directiveShared',
