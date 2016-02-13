@@ -11,6 +11,7 @@ angular
                 var timeout;
                 
                 $element.on('keyup', function(){
+                    if(!$element.val()) { return; }
                     $timeout.cancel(timeout);
                     timeout = $timeout(scope.callback, scope.delay);
                 });
