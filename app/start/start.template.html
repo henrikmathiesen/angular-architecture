@@ -24,12 +24,31 @@
         <div class="col-md-12">
             <h4>Directives share a controller</h4>
             <p>
-                Directive a, b, c must share scope (scope:false) for access to same controller in bindings<br/>
-                Directives also gets access to directiveShareParentCtrl:s properties and can bind to them
+                Directive a, b, c must share scope (scope:false) for access to same controller in bindings
+                <br/> Directives also gets access to directiveShareParentCtrl:s properties and can bind to them
             </p>
             <h4>Directives also share directiveShareGameFactory, they can share it and work with bindings, even with isolate scope (scope:{})</h4>
         </div>
         <aa-directive-share-controller-a></aa-directive-share-controller-a>
         <aa-directive-share-controller-b></aa-directive-share-controller-b>
+    </div>
+    <div class="row">
+        <div class="col-md-12" ng-controller="someControllerParent as someCtrlA">
+            <h3>Sub Controller Bindings</h3>
+            <div>
+                someControllerParent name: {{ someCtrlA.name }}
+            </div>
+            <div>
+                <input type="text" ng-model="someCtrlA.name">
+            </div>
+            <div ng-controller="someControllerChild as someCtrlB">
+                <div>
+                    someControllerChild name: {{ someCtrlB.name }}
+                </div>
+                <div>
+                    <input type="text" ng-model="someCtrlB.name">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
