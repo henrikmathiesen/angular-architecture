@@ -6,4 +6,5 @@ angular
        
        someCtrlB.name = "Bertil";
        
+       
     });

@@ -35,6 +35,10 @@
     <div class="row">
         <div class="col-md-12" ng-controller="someControllerParent as someCtrlA">
             <h3>Sub Controller Bindings</h3>
+            <p>
+                If controller as properties name are different (parents and child), then the child can bind to the parents properties. <br/>
+                If controller as properties name the same, then child can not bind to parents properties.
+            </p>
             <div>
                 someControllerParent name: {{ someCtrlA.name }}
             </div>
@@ -44,6 +48,9 @@
             <div ng-controller="someControllerChild as someCtrlB">
                 <div>
                     someControllerChild name: {{ someCtrlB.name }}
+                </div>
+                <div>
+                    someControllerParent name: {{ someCtrlA.name }}
                 </div>
                 <div>
                     <input type="text" ng-model="someCtrlB.name">
