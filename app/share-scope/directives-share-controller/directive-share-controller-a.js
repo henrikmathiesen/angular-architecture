@@ -1,5 +1,5 @@
 angular
-    .module('main.start')
+    .module('main.shareScope')
     .directive('aaDirectiveShareControllerA', function(directiveShareGameFactory){
         return {
             restrict: 'E',

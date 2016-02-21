@@ -1,5 +1,5 @@
 angular
-    .module('main.start')
+    .module('main.shareScope')
     .factory('directiveShareGameFactory', function(){
         
         var directiveShareGameFactory = {};

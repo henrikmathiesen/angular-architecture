@@ -1,0 +1,77 @@
+<div class="aa-share-scope-template">
+    <div class="row" ng-controller="directiveShareParent as directiveShareParentCtrl">
+        <div class="col-md-12 aa-parent-controller-output">
+            <h3>Directives share controller:s, parent controller</h3>
+            <p>If this controller was named ctrl, it would have shared scope with sub directives (which have scope:false)</p>
+            <div>{{directiveShareParentCtrl.person.food}}</div>
+            <div>
+                <input type="text" ng-model="directiveShareParentCtrl.person.food" />
+            </div>
+            <div>
+                Drink: {{ ctrl.person.drink }}
+            </div>
+        </div>
+        <div class="col-md-12">
+            <h4>Directives share a controller</h4>
+            <p>
+                Directive a, b, c must share scope (scope:false) for access to same controller in bindings
+                <br/> Directives also gets access to directiveShareParentCtrl:s properties and can bind to them
+            </p>
+            <h4>Directives also share directiveShareGameFactory, they can share it and work with bindings, even with isolate scope (scope:{})</h4>
+        </div>
+        <aa-directive-share-controller-a></aa-directive-share-controller-a>
+        <aa-directive-share-controller-b></aa-directive-share-controller-b>
+    </div>
+    <div class="row">
+        <div class="col-md-12" ng-controller="someControllerParent as someCtrlA">
+            <h3>Sub Controller Bindings</h3>
+            <div class="aa-parent-controller-output">
+                <p>
+                    <span class="text-success">
+                            If controller as properties name are different (parents and child), then the child can bind to the parents properties. <br/>
+                        </span> If controller as properties name the same, then child can not bind to
+                    parents properties.
+                    <br />
+                    <span class="text-danger">Even if controller as properties are different names, parent controller can not access child,</span>
+                    <a href="http://stackoverflow.com/questions/13428042/angularjs-access-to-child-scope" target="_blank">read more here</a>
+                    <br />
+                </p>
+                <div>
+                    someControllerParent name: {{ someCtrlA.name }}
+                </div>
+                <div class="text-danger">
+                    someControllerChild name: {{ someCtrlB.name }}
+                </div>
+                <div>
+                    <input type="text" ng-model="someCtrlA.name">
+                </div>
+            </div>
+            <div ng-controller="someControllerChild as someCtrlB">
+                <div>
+                    someControllerChild name: {{ someCtrlB.name }}
+                </div>
+                <div class="text-success">
+                    someControllerParent name: {{ someCtrlA.name }}
+                </div>
+                <div>
+                    <input type="text" ng-model="someCtrlB.name">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>So to conclude</h3>
+            <h4>Sub Controllers Bindings</h4>
+            <p>
+                When nesting controllers, with controller as syntax; child controller can access parent controllers properties, but parent
+                controller can not access child controllers properties.
+            </p>
+            <h4>Nesting directives</h4>
+            <p>
+                When nesting a directive under a controller, and the directive does not have an isolated scope, the controller can access
+                its properties. And the directive can access its parent controllers properties.
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 angular
-    .module('main.start')
+    .module('main.shareScope')
     .controller('directiveShareParent', function(){
         console.log("## directiveShareParent controller ##");
         
