@@ -22,8 +22,8 @@
         <aa-directive-share-controller-a></aa-directive-share-controller-a>
         <aa-directive-share-controller-b></aa-directive-share-controller-b>
     </div>
-    <div class="row">
-        <div class="col-md-12" ng-controller="someControllerParent as someCtrlA">
+    <div class="row" ng-controller="someControllerParent as someCtrlA">
+        <div class="col-md-12">
             <h3>Sub Controller Bindings</h3>
             <div class="aa-parent-controller-output">
                 <p>
@@ -59,6 +59,32 @@
             </div>
         </div>
     </div>
+    <div class="row" ng-controller="controllerAsParent as ctrl">
+        <div class="col-md-12">
+            <h3>Controller bindings with controller as ctrl</h3>
+            <div>
+                My phone is: {{ ctrl.phone }}
+            </div>
+            <div>
+                Childs computer is: {{ ctrl.computer }}
+            </div>
+            <div>
+                Directives snus is: {{ ctrl.snus }}
+            </div>
+            <div ng-controller="controllerAsChild as ctrl">
+                <div>
+                    My computer is: {{ ctrl.computer }}
+                </div>
+                <div>
+                    Parents Phone is: {{ ctrl.phone }}
+                </div>
+                <div>
+                    Directives snus is: {{ ctrl.snus }}
+                </div>
+                <controller-as-child-dir></controller-as-child-dir>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <h3>So to conclude</h3>
@@ -75,6 +101,13 @@
             <h4><mark>Important</mark></h4>
             <p>
                 In controller functions, no strait forward way to reach properties of parent/child scope.
+            </p>
+            <h4>We name our controller variable</h4>
+            <p>
+                Looking at the example "Controller bindings with controller as ctrl" we can
+                see that although 'ctrl.computer' is defined on controller child, it looks
+                for it on the parent controller since its controller variable is also called ctrl.
+                <a href="https://toddmotto.com/digging-into-angulars-controller-as-syntax/" target="_blank">Name your controller variables</a>
             </p>
         </div>
     </div>
