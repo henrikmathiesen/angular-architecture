@@ -1,6 +1,6 @@
 angular
     .module('main.shareScope')
-    .controller('directiveShared', function(){
+    .controller('directiveShared', function($scope){
         
         var ctrl = this;
         
@@ -11,5 +11,7 @@ angular
             food: 'pizza',
             drink: 'juice'
         };
+        
+        console.log($scope);
         
     });

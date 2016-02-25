@@ -1,6 +1,6 @@
 angular
     .module('main.shareScope')
-    .controller('directiveShareParent', function(){
+    .controller('directiveShareParent', function($scope){
         console.log("## directiveShareParent controller ##");
         
         var directiveShareParentCtrl = this;
@@ -8,4 +8,6 @@ angular
         directiveShareParentCtrl.person = {
             food: 'Hamburger'
         };
+        
+        console.log($scope);
     });

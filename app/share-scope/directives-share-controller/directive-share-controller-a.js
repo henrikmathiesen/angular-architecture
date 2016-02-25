@@ -17,6 +17,8 @@ angular
                 scope.changeGame = function (event) {
                   directiveShareGameFactory.setGame(event.currentTarget.value);  
                 };
+                
+                console.log(scope);
             },
             controller: 'directiveShared',
             controllerAs: 'ctrl',

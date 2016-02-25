@@ -1,5 +1,5 @@
 angular
-    .module('main.start')
+    .module('main.shareScope')
     .controller('someControllerChild', function(){
        
        var someCtrlB = this;
