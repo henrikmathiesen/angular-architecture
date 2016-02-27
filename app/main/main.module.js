@@ -8,6 +8,7 @@ angular
         'main.start', 
         'main.about', 
         'main.shareScope',
+        'main.shareScopeMore',
         'main.responsivejs', 
         'main.events', 
         'main.event', 

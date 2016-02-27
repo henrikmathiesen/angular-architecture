@@ -36,6 +36,15 @@ angular
                     showInMenu: true
                 }
             })
+            .state('shareScopeMore', {
+                url: '/share-scope-more',
+                templateUrl: 'share-scope-more/share-scope-more.template.html',
+                controller: 'shareScopeMore as shareScopeMoreCtrl',
+                data: {
+                    title: 'Share Scope More',
+                    showInMenu: false
+                }
+            })
             .state('responsivejs', {
                 url: '/responsivejs',
                 templateUrl: 'responsivejs/responsivejs.template.html',

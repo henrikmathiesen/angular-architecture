@@ -1,0 +1,102 @@
+<div class="aa-share-scope-more-template">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>This view has a controller, we leave that one out of these tests</h3>
+        </div>
+    </div>
+    <div class="aa-share-scope-more-template-test-area">
+        <div class="row" ng-controller="dollarScopeParent">
+            <div class="col-md-12">
+                <h4>===== dollarScopeParent controller =====</h4>
+                <div>
+                    parentName: {{ parentName }}
+                </div>
+                <div class="text-danger">
+                    childName: {{ childName }}
+                </div>
+                <div>
+                    isOpen: {{ isOpen }}
+                </div>
+                <div>
+                    <input type="text" ng-model="isOpen">
+                </div>
+                <div>
+                    <input type="text" ng-model="someText" class="bg-danger"> <span class="text-danger">{{ someText }}</span>
+                </div>
+                <div>
+                    <input type="text" ng-model="msg.text" class="bg-success"> <span class="text-success">{{ msg.text }}</span>
+                </div>
+                <div ng-controller="dollarScopeChild">
+                    <h5>===== dollarScopeChild controller =====</h5>
+                    <div>
+                        parentName: {{ parentName }}
+                    </div>
+                    <div>
+                        childName: {{ childName }}
+                    </div>
+                    <div>
+                        isOpen: {{ isOpen }}
+                    </div>
+                    <div>
+                        <input type="text" ng-model="isOpen">
+                    </div>
+                    <div>
+                        <input type="text" ng-model="someText" class="bg-danger"> <span class="text-danger">{{ someText }}</span>
+                    </div>
+                    <div>
+                        <input type="text" ng-model="msg.text" class="bg-success"> <span class="text-success">{{ msg.text }}</span>
+                    </div>
+                    <div>
+                        <input type="text" ng-model="foo" ng-if="true == true" class="bg-danger"> <span>{{ foo }}</span>
+                    </div>
+                    <div>
+                        <input type="text" ng-model="vm.foo" ng-if="true == true" class="bg-success"> <span>{{ vm.foo }}</span>
+                    </div>
+                    <h5>===== dollarScopeChild controller =====</h5>
+                </div>
+                <h4>===== dollarScopeParent controller =====</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h3>Conclusion</h3>
+                <p>
+                    The child controller can reach the parent controllers properties, but not vice versa.
+                </p>
+                <p>
+                    'isOpen' property is defined on both scopes, it seems the property is seperated, good.
+                </p>
+                <p>
+                    The input field bound to the 'isOpen' property binds to correct controller property also, good.
+                </p>
+                <p>
+                    However in the input field bound to 'someText', we can see that if we write in the parent first then the parent and child
+                    share the values. But if we write in the child first then their values are distinct. It is because the
+                    property 'someText' is created when you start typing, and if you type in parent first the child will
+                    inherit it.
+                </p>
+                <p>
+                    If we instead use the object syntax, this problem will not arise.
+                </p>
+                <h4>Why is this important</h4>
+                <p>
+                    Well, in this example we nesting controllers, which created new scopes. There are other things that
+                    creates new scopes; ng-if, ng-repeat and directives with scope true. In my experience, the red input
+                    example can manifest itself in other situations and mess up bindings.
+                </p>
+                <h4>Use object syntax</h4>
+                <p>
+                    What we can see from these examples are that when we are using the object syntax, we do not
+                    get problems with binding mix ups.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="aa-share-scope-more-template-test-area">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+</div>

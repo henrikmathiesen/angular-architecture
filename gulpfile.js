@@ -43,7 +43,7 @@ var jsAppSrc = [
 
 var templateSrc = 'app/**/*.template.html';
 
-var lessSrc = 'app/main/main.less';
+var lessSrc = 'app/main/less/main.less';
 var lessSrcWatch = 'app/**/*.less';
 
 var bldFolder = 'bld';
