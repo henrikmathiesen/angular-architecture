@@ -18,13 +18,13 @@
                     isOpen: {{ isOpen }}
                 </div>
                 <div>
-                    <input type="text" ng-model="isOpen">
+                    <input type="text" ng-model="isOpen" />
                 </div>
                 <div>
-                    <input type="text" ng-model="someText" class="bg-danger"> <span class="text-danger">{{ someText }}</span>
+                    <input type="text" ng-model="someText" class="bg-danger" /> <span class="text-danger">{{ someText }}</span>
                 </div>
                 <div>
-                    <input type="text" ng-model="msg.text" class="bg-success"> <span class="text-success">{{ msg.text }}</span>
+                    <input type="text" ng-model="msg.text" class="bg-success" /> <span class="text-success">{{ msg.text }}</span>
                 </div>
                 <div ng-controller="dollarScopeChild">
                     <h5>===== dollarScopeChild controller =====</h5>
@@ -38,19 +38,19 @@
                         isOpen: {{ isOpen }}
                     </div>
                     <div>
-                        <input type="text" ng-model="isOpen">
+                        <input type="text" ng-model="isOpen" />
                     </div>
                     <div>
-                        <input type="text" ng-model="someText" class="bg-danger"> <span class="text-danger">{{ someText }}</span>
+                        <input type="text" ng-model="someText" class="bg-danger" /> <span class="text-danger">{{ someText }}</span>
                     </div>
                     <div>
-                        <input type="text" ng-model="msg.text" class="bg-success"> <span class="text-success">{{ msg.text }}</span>
+                        <input type="text" ng-model="msg.text" class="bg-success" /> <span class="text-success">{{ msg.text }}</span>
                     </div>
                     <div>
-                        <input type="text" ng-model="foo" ng-if="true == true" class="bg-danger"> <span>{{ foo }}</span>
+                        <input type="text" ng-model="foo" ng-if="true == true" class="bg-danger" /> <span>{{ foo }}</span>
                     </div>
                     <div>
-                        <input type="text" ng-model="vm.foo" ng-if="true == true" class="bg-success"> <span>{{ vm.foo }}</span>
+                        <input type="text" ng-model="vm.foo" ng-if="true == true" class="bg-success" /> <span>{{ vm.foo }}</span>
                     </div>
                     <h5>===== dollarScopeChild controller =====</h5>
                 </div>
@@ -80,14 +80,14 @@
                 </p>
                 <h4>Why is this important</h4>
                 <p>
-                    Well, in this example we nesting controllers, which created new scopes. There are other things that
-                    creates new scopes; ng-if, ng-repeat and directives with scope true. In my experience, the red input
-                    example can manifest itself in other situations and mess up bindings.
+                    Well, in this example we nesting controllers, which created new scopes. There are other things that creates new scopes; ng-if,
+                    ng-repeat and directives with scope true. In my experience, the red input example can manifest itself
+                    in other situations and mess up bindings.
                 </p>
                 <h4>Use object syntax</h4>
                 <p>
-                    What we can see from these examples are that when we are using the object syntax, we do not
-                    get problems with binding mix ups.
+                    What we can see from these examples are that when we are using the object syntax, we do not get problems with binding mix
+                    ups.
                 </p>
             </div>
         </div>
@@ -95,7 +95,51 @@
     <div class="aa-share-scope-more-template-test-area">
         <div class="row">
             <div class="col-md-12">
-
+                <h3>The best approach is to use controller as</h3>
+                <p>
+                    we use controller as, with different name to
+                </p>
+                <ul>
+                    <li>get object syntax</li>
+                    <li>diferantiate between controller bindings</li>
+                    <li>dont be dependent of $scope in controllers</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row" ng-controller="controllerAsDifNameParent as controllerAsDifNameParentCtrl">
+            <div class="col-md-12">
+                <div>
+                    controllerAsDifNameParentCtrl.parentName: {{ controllerAsDifNameParentCtrl.parentName }}
+                </div>
+                <div class="text-danger">
+                    controllerAsDifNameChildCtrl.childName: {{ controllerAsDifNameChildCtrl.childName }}
+                </div>
+                <div ng-controller="controllerAsDifNameChild as controllerAsDifNameChildCtrl">
+                    <div>
+                        controllerAsDifNameParentCtrl.parentName: {{ controllerAsDifNameParentCtrl.parentName }}
+                    </div>
+                    <div>
+                        controllerAsDifNameChildCtrl.childName: {{ controllerAsDifNameChildCtrl.childName }}
+                    </div>
+                    <div>
+                        <input type="text" ng-model="controllerAsDifNameChildCtrl.inputText" ng-if="true == true" class="bg-success" /> <span>{{ controllerAsDifNameChildCtrl.inputText }}</span> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h3>Conclusion</h3>
+                <p>
+                    With controller as ctrlWithDifferentnames the child controller can reach parent controllers properties just like before,
+                    but it is more obvious which controller the property belongs to.
+                </p>
+                <p>
+                    Also there is no scope problem any more with ng-if.
+                </p>
+                <p>
+                    <mark>The best practise to share properties between controllers is to use a service.</mark>
+                </p>
             </div>
         </div>
     </div>
