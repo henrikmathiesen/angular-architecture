@@ -1,6 +1,6 @@
 angular
     .module('main.about')
-    .controller('about', function (dateFactory, weekDaysConstant) {
+    .controller('about', function ($scope, dateFactory, weekDaysConstant) {
 
         console.log("About controller");
 
@@ -20,5 +20,61 @@ angular
                 aboutCtrl.currentDayMessage = 'Work work work!';
                 break;
         }
+        
+        
+        //
+        // Filter ng-options
+        
+        aboutCtrl.games = [
+            {
+                id: '1',
+                name: 'Witcher 1'
+            },
+            {
+                id: '2',
+                name: 'Witcher 2'
+            },
+            {
+                id: '3',
+                name: 'Witcher 3'
+            },
+            {
+                id: '4',
+                name: 'Dragon Age 1'
+            },
+            {
+                id: '5',
+                name: 'Dragon Age 2'
+            },
+            {
+                id: '6',
+                name: 'Dragon Age 3'
+            },
+            {
+                id: '7',
+                name: 'Mass Effect 1'
+            },
+            {
+                id: '8',
+                name: 'Mass Effect 2'
+            },
+            {
+                id: '9',
+                name: 'Pong'
+            },
+            {
+                id: '10',
+                name: 'Tetris'
+            }
+        ];
+        
+        aboutCtrl.gameSelected = '';
+        aboutCtrl.gamesFilter = '';
+        aboutCtrl.gamesFiltered = [];
+        
+        aboutCtrl.checkGameSelected = function () {
+            console.log(aboutCtrl.gameSelected);
+            console.log(aboutCtrl.gamesFiltered);  
+        };
 
     });

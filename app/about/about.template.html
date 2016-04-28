@@ -63,6 +63,30 @@
         </div>
     </div>
     <div>
+        <div>
+            <input type="text" ng-model="aboutCtrl.gamesFilter" ng-keyup="aboutCtrl.checkGameSelected()">
+        </div>
+        <div>
+            <!--<select
+                ng-change="aboutCtrl.checkGameSelected()"
+                ng-model="aboutCtrl.gameSelected.id"
+                ng-options="g.id as g.name for g in aboutCtrl.games | filter: aboutCtrl.gamesFilter track by g.id">
+                <option value="">VÄLJ</option>
+            </select>-->
+            <!--
+                
+                g as g.name for g in aboutCtrl.games | filter: aboutCtrl.gamesFilter track by g.id
+            -->
+            
+            <select ng-model="aboutCtrl.gameSelected"
+                    ng-change="aboutCtrl.checkGameSelected()">
+                <option value="{{ game.id }}" 
+                        ng-selected="aboutCtrl.gameSelected == game.id"
+                        ng-repeat="game in aboutCtrl.gamesFiltered = (aboutCtrl.games | filter: aboutCtrl.gamesFilter)">{{ game.name }}</option>
+            </select>
+        </div>
+    </div>
+    <div>
         {{papaCtrl.foo}}
     </div>
 </div>
