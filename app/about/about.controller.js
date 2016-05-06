@@ -76,5 +76,28 @@ angular
             console.log(aboutCtrl.gameSelected);
             console.log(aboutCtrl.gamesFiltered);  
         };
+        
+        //
+        // UI DatePicker
+        // If trouble, try: 'event.preventDefault()' and 'event.stopPropagation()'in open and toggle 
+        
+        aboutCtrl.uiDatePickerOne = {};
+        aboutCtrl.uiDatePickerOne.vm = new Date();
+        aboutCtrl.uiDatePickerOne.isOpen = false;
+        
+        aboutCtrl.uiDatePickerOne.open = function (event) {
+            aboutCtrl.uiDatePickerOne.isOpen = true;  
+        };
+        
+        aboutCtrl.uiDatePickerOne.toggle = function (event) {
+            aboutCtrl.uiDatePickerOne.isOpen = !aboutCtrl.uiDatePickerOne.isOpen;
+        };
+        
+        aboutCtrl.uiDatePickerOne.changeEvent = function (event) {
+            console.log("UI DATE PICKER CHANGE");
+            console.log(aboutCtrl.uiDatePickerOne.vm);
+            console.log("/UI DATE PICKER CHANGE");
+        };
+        
 
     });

@@ -1,6 +1,7 @@
 angular
     .module('main', [
         'ui.router',
+        'ui.bootstrap',
         'templates',
          
         'main.shared', 
