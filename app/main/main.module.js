@@ -16,6 +16,7 @@ angular
         'main.papa',
         'main.papaabstract', 
         'main.error',
+        'main.newWindow'
         
         ]);
     

@@ -8,6 +8,19 @@
     </div>
     <div class="row">
         <div class="col-md-12">
+            <p>
+                <a ui-sref="newwindow({ foo: 'test' })">Link to new window view</a>
+            </p>
+            <p>
+                <a ui-sref="newwindow({ foo: 'test' })" target="_blank">Link to new window view</a>
+            </p>
+            <p>
+                <span ng-click="startCtrl.goToNewWindow()">Link to new window</span>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <h3>We use a custom debounce for input here</h3>
             <input type="text" aa-debounce-input="" callback="startCtrl.search()" delay="2000"></input>
         </div>

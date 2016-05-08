@@ -150,6 +150,17 @@ angular
                     showInMenu: true
                 }
             })
+            .state('newwindow', {
+                url: '/newwindow',
+                templateUrl: 'new-window/new-window.template.html',
+                controller: 'newWindow as newWindowCtrl',
+                data: {
+                  showInMenu: false  
+                },
+                params: {
+                    foo: null
+                }
+            })
             .state('error', {
                 templateUrl: 'error/error.template.html',
                 controller: 'error as errorCtrl',
