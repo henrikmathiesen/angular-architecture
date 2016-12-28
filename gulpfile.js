@@ -139,7 +139,7 @@ gulp.task('default', ['clean-bld', 'js-lib', 'js-app', 'template-cache', 'less']
     injectToHtml();
 });
 
-gulp.task('test', ['template-cache'], function (done) {
+gulp.task('test', ['default', 'template-cache'], function (done) {
     new Server({
         configFile: __dirname + '/karma.conf.js',
         singleRun: true,
