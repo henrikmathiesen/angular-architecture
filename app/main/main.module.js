@@ -40,7 +40,8 @@ angular
     - about modules run
     - main modules run
     
-    # Order of module dependencies does not seem to matter
+    # 3party modules must come before App modules
+    # Order of App module dependencies does not seem to matter
     
     # Two modules that needs the same services will both reference a dependant to the service module
     - That makes unit testing one individual module easier, since it then loads its dependencies on its own
