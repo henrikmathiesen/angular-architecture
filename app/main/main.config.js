@@ -98,7 +98,7 @@ angular
                         controller: 'papa as papaCtrl',
                     },
                     'childA@papa': {
-                        template: '<p>Look Iam a child. {{papaCtrl.foo}}</p>'           // We can grab thins from parent ctrl
+                        template: '<p>Look Iam a child. {{papaCtrl.foo}}</p>'           // We can grab this from parent ctrl
                     },
                     'childB@papa': {
                         template: '<p>Iam also a child</p>'
