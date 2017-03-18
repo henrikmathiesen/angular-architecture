@@ -4,7 +4,7 @@
   "description": "Modules, controller as, ui-router, resolve, bootstrap less, gulp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall":"tsd install"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "karma-jasmine": "0.3.6",
     "karma-phantomjs-launcher": "0.2.2",
     "phantomjs": "1.9.19",
-    "yargs": "3.26.0"
+    "yargs": "3.26.0",
+    "tsd": "0.6.5"
   }
 }
