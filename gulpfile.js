@@ -33,6 +33,7 @@ var jsLibSrc = [
     'bower_components/jquery/dist/jquery.js',
     'bower_components/fastclick/lib/fastclick.js',
     'bower_components/angular/angular.js',
+    'bower_components/angular-i18n/angular-locale_sv-se.js',
     'bower_components/angular-ui-router/release/angular-ui-router.js',
     'bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
 ];

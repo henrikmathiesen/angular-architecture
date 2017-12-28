@@ -1,3 +1,10 @@
+// Prio 1
+// https://github.com/angular-ui/ui-mask
+
+// Prio 2
+// https://www.npmjs.com/package/angular-input-masks
+// Requires: https://docs.angularjs.org/guide/i18n
+
 angular
     .module('main.shared')
     .directive('aaInputMaskInt', function () {
@@ -6,6 +13,10 @@ angular
             scope: {},
             templateUrl: 'shared/input-mask-int/input-mask-int.template.html',
             link: function (scope, $element) {
+                scope.vm = {};
+
+                // Testing rendering with locale
+                scope.vm.currency = 10000;
 
                 // Simulating Server Response
                 $element.find('.form-control').on('blur', function () { 
