@@ -1,5 +1,16 @@
 <div class="aa-about-template">
     <div class="row">
+        <div class="col-sm-6">
+            <aa-input-mask-int></aa-input-mask-int>
+        </div>
+        <div class="col-sm-6">
+            <aa-input-mask-dec></aa-input-mask-dec>
+        </div>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="row">
         <div class="col-md-8 col-lg-6">
             <div>
                 <p>
@@ -62,6 +73,7 @@
             </div>
         </div>
     </div>
+
     <div>
         <div>
             <input type="text" ng-model="aboutCtrl.gamesFilter" ng-keyup="aboutCtrl.checkGameSelected()">
@@ -79,47 +91,32 @@
             -->
 
             <select ng-model="aboutCtrl.gameSelected" ng-change="aboutCtrl.checkGameSelected()">
-                <option value="{{ game.id }}" 
-                        ng-selected="aboutCtrl.gameSelected == game.id"
-                        ng-repeat="game in aboutCtrl.gamesFiltered = (aboutCtrl.games | filter: aboutCtrl.gamesFilter)">{{ game.name }}</option>
+                <option value="{{ game.id }}" ng-selected="aboutCtrl.gameSelected == game.id" ng-repeat="game in aboutCtrl.gamesFiltered = (aboutCtrl.games | filter: aboutCtrl.gamesFilter)">{{ game.name }}</option>
             </select>
         </div>
     </div>
     <div>
         {{papaCtrl.foo}}
     </div>
-    
-    <br><br><br><br>
-    
+
+    <br>
+    <br>
+    <br>
+    <br>
+
     <div class="row">
         <div class="col-sm-6">
             <div class="input-group">
-                <input type="text" class="form-control" 
-                        uib-datepicker-popup current-text="Idag" clear-text="Rensa" close-text="Stäng" starting-day="1"
-                        ng-model="aboutCtrl.uiDatePickerOne.vm" 
-                        is-open="aboutCtrl.uiDatePickerOne.isOpen" 
-                        ng-click="aboutCtrl.uiDatePickerOne.open($event)" 
-                        ng-change="aboutCtrl.uiDatePickerOne.changeEvent()"/>
+                <input type="text" class="form-control" uib-datepicker-popup current-text="Idag" clear-text="Rensa" close-text="Stäng" starting-day="1"
+                    ng-model="aboutCtrl.uiDatePickerOne.vm" is-open="aboutCtrl.uiDatePickerOne.isOpen" ng-click="aboutCtrl.uiDatePickerOne.open($event)"
+                    ng-change="aboutCtrl.uiDatePickerOne.changeEvent()" />
                 <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" 
-                            ng-click="aboutCtrl.uiDatePickerOne.toggle($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    <button type="button" class="btn btn-default" ng-click="aboutCtrl.uiDatePickerOne.toggle($event)">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
                 </span>
             </div>
         </div>
         <div class="col-sm-6"></div>
     </div>
-
-    <br><br><br><br>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <aa-input-mask-int></aa-input-mask-int>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <aa-input-mask-dec></aa-input-mask-dec>
-        </div>
-    </div>
-    
 </div>
