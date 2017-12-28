@@ -1,9 +1,9 @@
 // Prio 1
-// https://github.com/angular-ui/ui-mask
-
-// Prio 2
 // https://www.npmjs.com/package/angular-input-masks
 // Requires: https://docs.angularjs.org/guide/i18n
+
+// Prio 2
+// https://github.com/angular-ui/ui-mask
 
 angular
     .module('main.shared')
