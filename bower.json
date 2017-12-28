@@ -1,10 +1,6 @@
 {
   "name": "angular-architecture",
   "version": "0.0.0",
-  "homepage": "https://github.com/henrikmathiesen/angular-architecture",
-  "authors": [
-    "Henrik <henrik_mathiesen@hotmail.com>"
-  ],
   "license": "MIT",
   "ignore": [
     "**/.*",

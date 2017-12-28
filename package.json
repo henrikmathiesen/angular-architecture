@@ -4,7 +4,7 @@
   "description": "Modules, controller as, ui-router, resolve, bootstrap less, gulp",
   "main": "index.js",
   "scripts": {
-    "postinstall":"tsd install"
+    "postinstall":"tsd install && bower install"
   },
   "repository": {
     "type": "git",
