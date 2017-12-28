@@ -15,17 +15,10 @@ angular
             link: function (scope, $element) {
                 scope.vm = {};
 
+                scope.vm.ammount = null;
+
                 // Testing rendering with locale
                 scope.vm.currency = 10000;
-
-                // Simulating Server Response
-                $element.find('.form-control').on('blur', function () { 
-                    var value = angular.element(this).val();
-                    var cleaned = value.split(' ').join('');
-                    var number = parseInt(cleaned);
-                    
-                    angular.element(this).val(number);
-                });
             }
         };
     });

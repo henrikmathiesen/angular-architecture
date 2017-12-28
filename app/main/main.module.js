@@ -2,6 +2,7 @@ angular
     .module('main', [
         'ui.router',
         'ui.bootstrap',
+        'ui.utils.masks',
         'templates',
          
         'main.shared', 

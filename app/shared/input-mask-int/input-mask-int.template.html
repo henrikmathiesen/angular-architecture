@@ -1,11 +1,13 @@
 <div>
     <h3>Input Mask INT</h3>
     <div>
-        <input class="form-control" type="text">
+        <input class="form-control" type="text" ng-model="vm.ammount" ui-number-mask="0" ui-negative-number>
     </div>
     <br>
     <div>
         Testing locale: {{ vm.currency | currency }}
     </div>
+    <div>
+        Testing vm: {{ vm.ammount }}
+    </div>
 </div>
-

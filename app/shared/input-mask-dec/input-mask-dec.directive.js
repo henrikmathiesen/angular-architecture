@@ -6,7 +6,9 @@ angular
             scope: {},
             templateUrl: 'shared/input-mask-dec/input-mask-dec.template.html',
             link: function (scope, $element) {
-                console.log('aaInputMaskDec');
+                scope.vm = {};
+
+                scope.vm.ammount = null;
             }
         };
     });
