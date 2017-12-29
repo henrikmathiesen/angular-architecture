@@ -1,6 +1,6 @@
 angular
     .module('main.shared')
-    .directive('aaInputMaskDec', function () {
+    .directive('aaInputMaskDec', function ($timeout) {
         return {
             restrict: 'E',
             scope: {},
@@ -9,6 +9,11 @@ angular
                 scope.vm = {};
 
                 scope.vm.ammount = null;
+
+                // Testing server response, works
+                // $timeout(function () { 
+                //     scope.vm.ammount = -10000.59;
+                // }, 4000);
             }
         };
     });

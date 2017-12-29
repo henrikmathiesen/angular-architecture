@@ -1,4 +1,4 @@
-// Prio 1 (works, sort of, but glitchy)
+// Prio 1 (works ok ...)
 // https://www.npmjs.com/package/angular-input-masks
 // Requires: https://docs.angularjs.org/guide/i18n
 
@@ -16,7 +16,7 @@
 
 angular
     .module('main.shared')
-    .directive('aaInputMaskInt', function () {
+    .directive('aaInputMaskInt', function ($timeout) {
         return {
             restrict: 'E',
             scope: {},
@@ -28,6 +28,11 @@ angular
 
                 // Testing rendering with locale
                 scope.vm.currency = 10000;
+
+                // Testing server response, works
+                // $timeout(function () { 
+                //     scope.vm.ammount = 10000;
+                // }, 4000);
             }
         };
     });
