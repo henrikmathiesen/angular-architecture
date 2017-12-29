@@ -36,8 +36,7 @@ var jsLibSrc = [
     'bower_components/angular-i18n/angular-locale_sv-se.js',
     'bower_components/angular-ui-router/release/angular-ui-router.js',
     'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-    'bower_components/angular-input-masks/angular-input-masks-standalone.js',
-    'bower_components/angular-ui-mask/dist/mask.js'
+    'bower_components/angular-input-masks/angular-input-masks-standalone.js'
 ];
 
 var jsAppSrc = [

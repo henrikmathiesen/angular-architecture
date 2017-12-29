@@ -3,7 +3,6 @@ angular
         'ui.router',
         'ui.bootstrap',
         'ui.utils.masks',
-        'ui.mask',
         'templates',
          
         'main.shared', 
