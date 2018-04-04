@@ -42,5 +42,8 @@
     "phantomjs": "1.9.19",
     "tsd": "0.6.5",
     "yargs": "3.26.0"
+  },
+  "dependencies": {
+    "angular-input-masks": "4.1.0"
   }
 }
