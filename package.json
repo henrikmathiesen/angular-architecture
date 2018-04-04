@@ -4,7 +4,7 @@
   "description": "Modules, controller as, ui-router, resolve, bootstrap less, gulp",
   "main": "index.js",
   "scripts": {
-    "postinstall":"tsd install && bower install"
+    "postinstall": "tsd install && bower install"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/henrikmathiesen/angular-architecture#readme",
   "devDependencies": {
+    "bower": "1.8.4",
     "del": "1.2.0",
     "gulp": "3.9.0",
     "gulp-angular-templatecache": "1.8.0",
@@ -39,7 +40,7 @@
     "karma-jasmine": "0.3.6",
     "karma-phantomjs-launcher": "0.2.2",
     "phantomjs": "1.9.19",
-    "yargs": "3.26.0",
-    "tsd": "0.6.5"
+    "tsd": "0.6.5",
+    "yargs": "3.26.0"
   }
 }
