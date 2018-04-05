@@ -4,7 +4,8 @@
   "description": "Modules, controller as, ui-router, resolve, bootstrap less, gulp",
   "main": "index.js",
   "scripts": {
-    "postinstall": "tsd install && bower install"
+    "postinstall": "tsd install && bower install",
+    "serve": "http-server -p 1337"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "gulp-sourcemaps": "1.6.0",
     "gulp-strip-debug": "1.1.0",
     "gulp-uglify": "1.5.1",
+    "http-server": "0.11.1",
     "jasmine-core": "2.4.1",
     "jshint": "2.8.0",
     "jshint-stylish": "2.1.0",
