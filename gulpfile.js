@@ -36,8 +36,11 @@ var jsLibSrc = [
     'bower_components/angular-i18n/angular-locale_sv-se.js',
     'bower_components/angular-ui-router/release/angular-ui-router.js',
     'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+
+    'lib/angular-input-masks-standalone.js'
+
     //'node_modules/angular-input-masks/releases/angular-input-masks-standalone.js'
-    'lib/angular-input-masks-standalone.4.1.0.js'
+    //'lib/angular-input-masks-standalone-TEST.4.1.0.js'
     //'bower_components/angular-input-masks/angular-input-masks-standalone.js'
     //'lib/angular-input-masks-standalone.2.6.0.js'
 ];
