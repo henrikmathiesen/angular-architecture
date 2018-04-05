@@ -30,9 +30,9 @@ angular
                 scope.vm.currency = 10000;
 
                 // Testing server response, works
-                // $timeout(function () { 
-                //     scope.vm.ammount = 10000;
-                // }, 4000);
+                $timeout(function () { 
+                    scope.vm.ammount = 10000;
+                }, 4000);
             }
         };
     });
